@@ -61,6 +61,7 @@ export default function LogosGrid({ items, className, label }: LogosGridProps) {
                                 src={logo.src}
                                 alt={logo.alt}
                                 width={200}
+                                loading="lazy"
                                 className="object-cover transition-all duration-300 group-hover:scale-105 h-16!"
                             />
                         </div>

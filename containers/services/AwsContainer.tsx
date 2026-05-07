@@ -12,6 +12,7 @@ import { Server, Cloud, GitMerge, BarChart3, Shield, Zap, } from "lucide-react";
 import awsImg from '../../public/assets/web/Service-detail/aws-service-img.png'
 import awsAbout from '../../public/assets/web/Service-detail/AWS-About.png'
 import ServiceRegions from '@/components/web/services/ServiceRegions'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
 
 
 const stats = [
@@ -124,6 +125,16 @@ const services = [
     },
 ];
 
+const awsFaqs = [
+    { q: 'Where can I find AWS cloud services in the UK?', a: 'L2 Global has AWS certified cloud consultants serving London, Manchester and all UK regions. Free AWS assessment available.' },
+    { q: 'Do you offer AWS migration services in Dubai?', a: 'Yes, we provide AWS cloud migration, DevOps and architecture services across Dubai and GCC. We have 99.9% success rate on migration projects.' },
+    { q: 'What are your AWS service charges in the USA?', a: 'Pricing varies by project scope. A typical enterprise AWS migration ranges from $25,000–$200,000. Request free consultation at l2global.in/contact-us.' },
+    { q: 'What is the typical timeline for an AWS migration?', a: 'Medium-sized migrations take 2–4 months. Large transformations: 6–12 months. Our team ensures 35%+ faster deployment through automation.' },
+    { q: 'Do you provide 24/7 AWS support?', a: 'Yes. L2 Global provides 24/7 monitoring and managed cloud services for AWS environments in UK, USA and Gulf.' },
+    { q: 'Can you help with AWS cost optimization?', a: 'Yes. Our AWS FinOps specialists identify savings up to 30% through rightsizing, reserved instances and automation. Free AWS cost assessment available.' },
+]
+
+
 const AwsContainer = () => {
     return (
         <div>
@@ -150,6 +161,8 @@ const AwsContainer = () => {
             <ServiceWhyChooseUs />
 
             <ServiceRegions serviceName='AWS Cloud Services' />
+
+            <ServiceFAQ faqs={awsFaqs} serviceName='AWS Cloud Services' />
 
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA

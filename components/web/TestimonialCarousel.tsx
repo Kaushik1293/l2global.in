@@ -14,7 +14,8 @@ const testimonials = [
     desc: "From initial brainstorming to final delivery, the team demonstrated exceptional creativity and attention to detail. Their ability to understand our brand and translate it into impactful digital designs truly set them apart.",
     name: "Sophia Moore",
     role: "Marketing Head at BrightEdge Solutions",
-    img: "/assets/web/home/img-persion1.png",
+    // img: "/assets/web/home/img-persion1.png",
+    img: 'https://api.dicebear.com/7.x/initials/svg?seed=SophiaM&backgroundColor=0F766E'
   },
   {
     id: 2,
@@ -22,7 +23,8 @@ const testimonials = [
     desc: "The team consistently delivered high-quality designs backed by innovative thinking. Their structured approach, clear communication, and commitment to deadlines made the entire collaboration smooth and efficient.",
     name: "Adam Smith",
     role: "Founder of TechNova Labs",
-    img: "/assets/web/home/img-persion1.png",
+    // img: "/assets/web/home/img-persion1.png",
+    img: 'https://api.dicebear.com/7.x/initials/svg?seed=AdamS&backgroundColor=9D174D'
   },
   {
     id: 3,
@@ -30,7 +32,8 @@ const testimonials = [
     desc: "Working with L2 Global was a seamless experience. They took the time to understand our requirements and delivered creative solutions that aligned perfectly with our business goals and long-term vision.",
     name: "Mike Warren",
     role: "CEO of NextWave Technologies",
-    img: "/assets/web/home/img-persion1.png",
+    // img: "/assets/web/home/img-persion1.png",
+    img: 'https://api.dicebear.com/7.x/initials/svg?seed=MikeWarren&backgroundColor=074FDA'
   },
   {
     id: 4,
@@ -38,7 +41,8 @@ const testimonials = [
     desc: "Their team brought clarity and confidence to our project by combining technical expertise with strong design sensibilities. The results exceeded our expectations and significantly improved user engagement.",
     name: "Emily Carter",
     role: "Product Manager at Innovex Corp",
-    img: "/assets/web/home/img-persion1.png",
+    // img: "/assets/web/home/img-persion1.png",
+    img: 'https://api.dicebear.com/7.x/initials/svg?seed=EmilyC&backgroundColor=F15A23'
   },
   {
     id: 5,
@@ -46,7 +50,8 @@ const testimonials = [
     desc: "From planning to execution, every stage of the project was handled with professionalism. The team was responsive, adaptable, and delivered solutions that were both functional and visually impressive.",
     name: "Daniel Roberts",
     role: "Operations Director at CloudSphere",
-    img: "/assets/web/home/img-persion1.png",
+    // img: "/assets/web/home/img-persion1.png",
+    img: 'https://api.dicebear.com/7.x/initials/svg?seed=DanielR&backgroundColor=15803D'
   },
   {
     id: 6,
@@ -54,7 +59,8 @@ const testimonials = [
     desc: "L2 Global combined creative thinking with technical excellence to deliver a product that truly reflected our brand values. Their proactive approach and attention to detail made a noticeable difference.",
     name: "Rachel Thompson",
     role: "Head of Digital Strategy at Elevate Studios",
-    img: "/assets/web/home/img-persion1.png",
+    // img: "/assets/web/home/img-persion1.png",
+    img: 'https://api.dicebear.com/7.x/initials/svg?seed=RachelT&backgroundColor=7C3AED'
   },
 ];
 
@@ -119,8 +125,8 @@ export default function TestimonialCarousel() {
             const isCenter = isMobile
               ? true
               : i === current ||
-                (current > testimonials.length - 3 &&
-                  i === (current - testimonials.length) % testimonials.length);
+              (current > testimonials.length - 3 &&
+                i === (current - testimonials.length) % testimonials.length);
 
             return (
               <div
@@ -131,18 +137,16 @@ export default function TestimonialCarousel() {
                   className={`
                     bg-white p-8 rounded-3xl flex flex-col justify-between
                     transition-all duration-500 m-5 md:m-0 h-full!
-                    ${
-                      isCenter
-                        ? "border border-[#FF6A1A] scale-100 shadow-xl"
-                        : "border border-transparent scale-[0.94] opacity-70"
+                    ${isCenter
+                      ? "border border-[#FF6A1A] scale-100 shadow-xl"
+                      : "border border-transparent scale-[0.94] opacity-70"
                     }
                   `}
                 >
                   <div>
                     <h3
-                      className={`text-[22px] font-semibold transition-colors duration-500 ${
-                        isCenter ? "text-[#FF6A1A]" : "text-gray-900"
-                      }`}
+                      className={`text-[22px] font-semibold transition-colors duration-500 ${isCenter ? "text-[#FF6A1A]" : "text-gray-900"
+                        }`}
                       style={{ letterSpacing: "-1px" }}
                     >
                       {t.title}
@@ -159,13 +163,13 @@ export default function TestimonialCarousel() {
                       alt={t.name}
                       width={45}
                       height={45}
+                      loading="lazy"
                       className="rounded-full object-cover bg-[#feebe2]"
                     />
                     <div>
                       <p
-                        className={`font-semibold transition-colors duration-500 ${
-                          isCenter ? "text-[#FF6A1A]" : "text-gray-900"
-                        }`}
+                        className={`font-semibold transition-colors duration-500 ${isCenter ? "text-[#FF6A1A]" : "text-gray-900"
+                          }`}
                       >
                         {t.name}
                       </p>

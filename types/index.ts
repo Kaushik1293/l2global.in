@@ -11,3 +11,19 @@ export interface IIndustriesSection {
     rightImage: string,
     rightBottomIcon?: React.ReactNode
 }
+
+export interface BlogPost {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  content: string;
+  author: string;
+  authorRole: string;
+  datePublished: string;
+  image: string;
+  category: string;
+  tags: string[];
+  serviceLink: string;
+  serviceName: string;
+}

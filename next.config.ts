@@ -4,6 +4,7 @@ const nextConfig: NextConfig = {
   /* config options here */
   output: 'export',
   images: {
+    formats: ["image/webp"],
     unoptimized: true,   // <<— important
     remotePatterns: [
       {

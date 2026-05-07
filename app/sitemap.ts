@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: '/contact-us', freq: 'monthly', pri: 0.9 },
     { path: '/career', freq: 'monthly', pri: 0.7 },
     { path: '/team', freq: 'monthly', pri: 0.6 },
+    { path: '/blog', freq: 'monthly', pri: 0.6 },
+
     // Services — highest priority
     { path: '/services/sap-link-by-salesforce', freq: 'monthly', pri: 0.95 },
     { path: '/services/mulesoft', freq: 'monthly', pri: 0.95 },

@@ -10,7 +10,7 @@ import img2 from '@/public/assets/web/contact-us/bengaluru.png'
 import img3 from '@/public/assets/web/contact-us/london.png'
 import img4 from '@/public/assets/web/contact-us/texas.png'
 import img5 from '@/public/assets/web/contact-us/new-york.png'
-
+import img6 from '../../public/assets/web/contact-us/dubai.png'
 import HeroCTA from '@/components/web/HeroCTA'
 import ContactItem from '@/components/web/ContactItem'
 import { Headset, Mail, MapPin } from 'lucide-react'
@@ -48,7 +48,13 @@ const locationDetails = [
         title: 'New York',
         image: img5,
         address: "3204, Spring, TX, USA - 77388"
-    }
+    },
+    {
+        title: 'Dubai, UAE',
+        image: img6,
+        address: 'Dubai, United Arab Emirates — Serving UAE, Saudi Arabia, Qatar, Kuwait, Bahrain & Oman',
+    },
+
 ]
 
 const ContactUsContainer = () => {

@@ -104,7 +104,7 @@ export default function MemberLogosSection() {
             </span>
 
             <h2 className="text-3xl md:text-4xl font-medium leading-tight tracking-[-2px] mt-6 text-center lg:text-left">
-              We Are A <br /> Prove Member
+              We Are A <br /> Proud Member
             </h2>
           </div>
 
@@ -115,7 +115,7 @@ export default function MemberLogosSection() {
             className="flex justify-center items-center py-12 border-r border-gray-200 border-b md:border-b-0"
           >
             <div className="w-28 h-28 sm:w-36 sm:h-36 bg-[#A12117] rounded-xl flex items-center justify-center p-4">
-              <Image src={img1} alt="Oracle" className="object-contain" />
+              <Image src={img1} alt="Oracle" loading="lazy" className="object-contain" />
             </div>
           </div>
 
@@ -125,16 +125,16 @@ export default function MemberLogosSection() {
             data-aos-delay="300"
             className="hidden md:flex justify-center items-center py-12 sm:border-r border-gray-200"
           >
-            <Image src={img2} alt="SAP Gold" className="w-28 sm:w-36 object-contain" />
+            <Image src={img2} alt="SAP Gold" loading="lazy" className="w-28 sm:w-36 object-contain" />
           </div>
 
           {/* SALESFORCE */}
           <div
             data-aos="zoom-in"
             data-aos-delay="450"
-            className="flex justify-center items-center py-12 border-b lg:border-b-0 border-gray-200"
+            className="flex justify-center items-center py-12 border-r border-gray-200"
           >
-            <Image src={img3} alt="Salesforce" className="w-28 sm:w-36 object-contain" />
+            <Image src={img3} alt="Salesforce" loading="lazy" className="w-28 sm:w-36 object-contain" />
           </div>
 
           {/* SAP MOBILE */}
@@ -143,7 +143,7 @@ export default function MemberLogosSection() {
             data-aos-delay="300"
             className="col-span-full md:hidden flex justify-center items-center py-12 border-b sm:border-r border-gray-200"
           >
-            <Image src={img2} alt="SAP Gold" className="w-28 sm:w-36 object-contain" />
+            <Image src={img2} alt="SAP Gold" loading="lazy" className="w-28 sm:w-36 object-contain" />
           </div>
 
           {/* RIGHT EMPTY HALF BOX */}

@@ -12,6 +12,7 @@ import { Database, Settings, Cloud, ShieldCheck, Activity, HardDrive } from "luc
 import oracleImg from '../../public/assets/web/Service-detail/oracle-service-img.png'
 import OracleAbout from '../../public/assets/web/Service-detail/oracle-about.png'
 import ServiceRegions from '@/components/web/services/ServiceRegions'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
 
 
 const stats = [
@@ -124,6 +125,30 @@ const services = [
     },
 ];
 
+const oracleFaqs = [
+    {
+        q: 'Where can I find Oracle DBA services near me?',
+        a: 'L2 Global provides Oracle DBA and Oracle Cloud Infrastructure services across UK, USA and Gulf (Dubai, Riyadh). Free Oracle health check available.'
+    },
+    {
+        q: 'Do you offer Oracle migration services to OCI?',
+        a: 'Yes. We have migrated 150+ Oracle workloads to OCI with 99.9% success rate. Typical migration time: 4–8 weeks. Free consultation available.'
+    },
+    {
+        q: 'What is the cost of Oracle managed services in the UK?',
+        a: 'Monthly managed services start from £2,000–£10,000 per database depending on size and criticality. Enterprise programmes vary by scope. Free assessment available.'
+    },
+    {
+        q: 'Do you provide 24/7 Oracle support for Oracle EBS?',
+        a: 'Yes. L2 Global offers 24/7 monitoring and support for Oracle EBS, Fusion and standalone databases.'
+    },
+    {
+        q: 'How can you reduce our Oracle costs?',
+        a: 'We optimise Oracle licensing, automate routine tasks, rightsise cloud resources, and implement proactive maintenance to reduce TCO by up to 40%.'
+    },
+]
+
+
 const OracleContainer = () => {
     return (
         <div>
@@ -150,6 +175,8 @@ const OracleContainer = () => {
             <ServiceWhyChooseUs />
 
             <ServiceRegions serviceName='Oracle Managed Services' />
+
+            <ServiceFAQ faqs={oracleFaqs} serviceName='Oracle Managed Services' />
 
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA

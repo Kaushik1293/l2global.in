@@ -82,8 +82,7 @@ export default function WebLayout({
         {children}
       </div>
       <a
-        href="https://wa.me/+447442586325"
-        target="_blank"
+        href="https://wa.me/447442586325?text=Hi%2C%20I%27m%20interested%20in%20your%20IT%20services" target="_blank"
         className="fixed bottom-6 right-6 text-white p-4 rounded-full hover:scale-110 transition-transform duration-300 flex items-center justify-center z-50"
       >
         <svg width="60" height="60" viewBox="0 0 82 82" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -69,7 +69,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect Links */}
+        <link rel="preconnect" href="https://flagcdn.com" />
+        <link rel="preconnect" href="https://widget.trustpilot.com" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
         {/* Google Tag (gtag.js) */}
+
         <Script
           async
           src="https://www.googletagmanager.com/gtag/js?id=G-YP4HCLVLZ9"
@@ -84,6 +91,38 @@ export default function RootLayout({
             gtag('config', 'G-YP4HCLVLZ9');
           `}
         </Script>
+        <Script
+          type='application/ld+json'
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              '@context': 'https://schema.org',
+              '@type': 'Organization',
+              name: 'L2 Global Technologies',
+              url: 'https://l2global.in',
+              logo: 'https://l2global.in/assets/web/l2-svg.svg',
+              email: 'contactus@l2global.in',
+              telephone: '+44-7442-586325',
+              foundingDate: '2020',
+              description: 'Expert Salesforce, SAP, MuleSoft and cloud integration consultants serving UK, USA, UAE, Saudi Arabia and Gulf businesses.',
+              address: [
+                {
+                  '@type': 'PostalAddress', addressCountry: 'GB',
+                  streetAddress: 'Cheltenham Road, Gloucester', postalCode: 'GL2 0JR'
+                },
+                { '@type': 'PostalAddress', addressCountry: 'AE', addressLocality: 'Dubai' },
+              ],
+              areaServed: ['GB', 'US', 'AE', 'SA', 'QA', 'KW', 'BH', 'OM', 'IN'].map(c => (
+                { '@type': 'Country', name: c }
+              )),
+              sameAs: [
+                'https://www.linkedin.com/company/l2-global-technologies',
+              ],
+            })
+          }}
+        />
+
+
+
         <link rel="icon" href="/favicon.ico" sizes="any" />
         <link rel='alternate' hrefLang='en-gb' href='https://l2global.in' />
         <link rel='alternate' hrefLang='en-us' href='https://l2global.in' />

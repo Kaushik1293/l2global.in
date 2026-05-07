@@ -32,6 +32,7 @@ const LocationCard = ({
                     alt={title}
                     width={0}
                     height={0}
+                    loading="lazy"
                     className="w-full h-auto object-cover"
                 />
             </div>

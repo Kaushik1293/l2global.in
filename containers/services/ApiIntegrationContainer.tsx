@@ -12,6 +12,7 @@ import { Cloud, GitMerge, Shield, BarChart3, Zap, Database } from "lucide-react"
 import ApiImg from '../../public/assets/web/Service-detail/api-service-img.png'
 import APIAbout from '../../public/assets/web/Service-detail/API-About.png'
 import ServiceRegions from '@/components/web/services/ServiceRegions'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
 
 
 const stats = [
@@ -124,6 +125,26 @@ const services = [
     },
 ];
 
+const apiFaqs = [
+    {
+        q: 'Where can I find API integration services near me?',
+        a: 'L2 Global provides API integration across UK, USA and Gulf (Dubai, Riyadh). 250+ APIs delivered. Free consultation at l2global.in/contact-us.'
+    },
+    {
+        q: 'How much does API integration cost in the UK?',
+        a: 'Single API: £8,000–£35,000. Enterprise programmes vary by scope. Free scoping consultation available.'
+    },
+    {
+        q: 'Do you offer API integration services in Dubai?',
+        a: 'Yes. L2 Global serves Dubai and all GCC countries remotely.'
+    },
+    {
+        q: 'How long does an API integration project take?',
+        a: 'Typical single integration: 4–10 weeks. L2 Global has delivered 250+ APIs. Free consultation to scope your project.'
+    },
+]
+
+
 const ApiIntegrationContainer = () => {
     return (
         <div>
@@ -150,6 +171,8 @@ const ApiIntegrationContainer = () => {
             <ServiceWhyChooseUs />
 
             <ServiceRegions serviceName='API Integration Services' />
+
+            <ServiceFAQ faqs={apiFaqs} serviceName='API Integration Services' />
 
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
