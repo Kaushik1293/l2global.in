@@ -7,40 +7,40 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const Services = () => {
-    const cards = [
-        {
-            title: "Digital Buying",
-            desc: "If you are looking for a better return on your ad spend then Technologies is the place to go.",
-            bg: "bg-[#E5ECFD]",
-            icon: "/assets/web/home/services/digital.png",
-            border: "border-[#C1C1FF]",
-            iconColor: "#606EE4"
-        },
-        {
-            title: "Data Analytics",
-            desc: "If you are looking for a better return on your ad spend then Technologies is the place to go.",
-            bg: "bg-[#FFEFE1]",
-            icon: "/assets/web/home/services/data.png",
-            border: "border-[#FFBCA5]",
-            iconColor: "#F49308"
-        },
-        {
-            title: "Web Experience",
-            desc: "If you are looking for a better return on your ad spend then Technologies is the place to go.",
-            bg: "bg-[#FDE7EB]",
-            icon: "/assets/web/home/services/web.png",
-            border: "border-[#FAC3CC]",
-            iconColor: "#FF7A90"
-        },
-        {
-            title: "Enterprise Software",
-            desc: "If you are looking for a better return on your ad spend then Technologies is the place to go.",
-            bg: "bg-[#E4F6DF]",
-            icon: "/assets/web/home/services/enterprise.png",
-            border: "border-[#ACD99D]",
-            iconColor: "#5D9E4B"
-        },
-    ];
+   const cards = [
+  {
+    title: "Salesforce / CRM",
+    desc: "Expert Salesforce implementation, customisation and support. Trusted by UK, USA and Gulf businesses. 180+ CRM deployments.",
+    bg: "bg-[#E5ECFD]",
+    icon: "/assets/web/home/services/digital.png",
+    border: "border-[#C1C1FF]",
+    iconColor: "#606EE4"
+  },
+  {
+    title: "SAP Integration",
+    desc: "SAP S/4HANA, BTP and SAP–Salesforce integration specialists. Serving London, Dubai and New York. Real-time sync delivered.",
+    bg: "bg-[#FFEFE1]",
+    icon: "/assets/web/home/services/data.png",
+    border: "border-[#FFBCA5]",
+    iconColor: "#F49308"
+  },
+  {
+    title: "MuleSoft / API",
+    desc: "Certified MuleSoft Anypoint consultants. 250+ APIs delivered. API-led connectivity for UK, USA and Gulf enterprises.",
+    bg: "bg-[#FDE7EB]",
+    icon: "/assets/web/home/services/web.png",
+    border: "border-[#FAC3CC]",
+    iconColor: "#FF7A90"
+  },
+  {
+    title: "Cloud & Oracle",
+    desc: "AWS cloud migration, DevOps and Oracle managed services. Serving UK, USA, UAE and Saudi Arabia. Free assessment.",
+    bg: "bg-[#E4F6DF]",
+    icon: "/assets/web/home/services/enterprise.png",
+    border: "border-[#ACD99D]",
+    iconColor: "#5D9E4B"
+  },
+];
 
     useEffect(() => {
         AOS.init({

@@ -4,7 +4,7 @@ import * as LucideIcons from "lucide-react";
 import Image from "next/image";
 import Divider from "./Divider";
 import SectionHeader from "./SectionHeader";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import PrimaryButton from "../shared/PrimaryButton";
 import Link from "next/link";
 import AOS from "aos";
@@ -29,72 +29,136 @@ type AboutSectionProps = {
 };
 
 /* Counter Hook */
+// const useCounter = (end: number, duration = 800) => {
+//     const [count, setCount] = useState(0);
+
+//     useEffect(() => {
+//         let current = 0;
+//         const step = end / (duration / 16);
+
+//         const timer = setInterval(() => {
+//             current += step;
+//             if (current >= end) {
+//                 setCount(end);
+//                 clearInterval(timer);
+//             } else {
+//                 setCount(Math.ceil(current));
+//             }
+//         }, 16);
+
+//         return () => clearInterval(timer);
+//     }, [end, duration]);
+
+//     return count;
+// };
+
 const useCounter = (end: number, duration = 800) => {
-    const [count, setCount] = useState(0);
-
-    useEffect(() => {
-        let current = 0;
-        const step = end / (duration / 16);
-
-        const timer = setInterval(() => {
-            current += step;
-            if (current >= end) {
-                setCount(end);
-                clearInterval(timer);
-            } else {
-                setCount(Math.ceil(current));
-            }
-        }, 16);
-
-        return () => clearInterval(timer);
-    }, [end, duration]);
-
-    return count;
+  const [count, setCount] = useState(0);
+  const [hasStarted, setHasStarted] = useState(false);
+ 
+  useEffect(() => {
+    if (!hasStarted) return;
+    let current = 0;
+    const step = end / (duration / 16);
+    const timer = setInterval(() => {
+      current += step;
+      if (current >= end) {
+        setCount(end);
+        clearInterval(timer);
+      } else {
+        setCount(Math.ceil(current));
+      }
+    }, 16);
+    return () => clearInterval(timer);
+  }, [hasStarted, end, duration]);
+ 
+  return { count, setHasStarted };
 };
 
 
-function StatCard({
-    item,
-    delay,
-}: {
-    item: StatItem;
-    delay: number;
-}) {
-    const numericValue = Number(item.value.replace(/\D/g, ""));
-    const suffix = item.value.replace(/[0-9]/g, "");
-    const counter = useCounter(numericValue);
+// function StatCard({
+//     item,
+//     delay,
+// }: {
+//     item: StatItem;
+//     delay: number;
+// }) {
+//     const numericValue = Number(item.value.replace(/\D/g, ""));
+//     const suffix = item.value.replace(/[0-9]/g, "");
+//     const counter = useCounter(numericValue);
 
-    return (
-        <div
-            data-aos="fade-up"
-            data-aos-delay={delay}
-            className="group bg-[#F6F6F9] rounded-xl px-3 py-6 border border-transparent text-center transition duration-500 hover:border-[#CCCFD3] hover:bg-white"
-        >
-            <div className="flex justify-center items-start gap-2 text-out">
-                <div className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center">
-                    {item.icon}
-                </div>
+//     return (
+//         <div
+//             data-aos="fade-up"
+//             data-aos-delay={delay}
+//             className="group bg-[#F6F6F9] rounded-xl px-3 py-6 border border-transparent text-center transition duration-500 hover:border-[#CCCFD3] hover:bg-white"
+//         >
+//             <div className="flex justify-center items-start gap-2 text-out">
+//                 <div className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center">
+//                     {item.icon}
+//                 </div>
 
-                <div className="w-full">
-                    <div
-                        className="text-2xl sm:text-4xl pb-2 group-hover:text-[#F15A23]"
-                        style={{ fontWeight: 700, letterSpacing: "-1px" }}
-                    >
-                        {counter}
-                        {suffix}
-                    </div>
+//                 <div className="w-full">
+//                     <div
+//                         className="text-2xl sm:text-4xl pb-2 group-hover:text-[#F15A23]"
+//                         style={{ fontWeight: 700, letterSpacing: "-1px" }}
+//                     >
+//                         {counter}
+//                         {suffix}
+//                     </div>
 
-                    <div
-                        className="border-t border-dotted border-[#1717171A] pt-2 text-[#494852] text-sm"
-                        style={{ letterSpacing: "-0.5px" }}
-                    >
-                        {item.label}
-                    </div>
-                </div>
-            </div>
-        </div>
+//                     <div
+//                         className="border-t border-dotted border-[#1717171A] pt-2 text-[#494852] text-sm"
+//                         style={{ letterSpacing: "-0.5px" }}
+//                     >
+//                         {item.label}
+//                     </div>
+//                 </div>
+//             </div>
+//         </div>
+//     );
+// }
+
+function StatCard({ item, delay }: { item: StatItem; delay: number }) {
+  const numericValue = Number(item.value.replace(/\D/g, ''));
+  const suffix = item.value.replace(/[0-9]/g, '');
+  const { count, setHasStarted } = useCounter(numericValue);
+  const ref = useRef<HTMLDivElement>(null);
+ 
+  useEffect(() => {
+    const el = ref.current;
+    if (!el) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => { if (entry.isIntersecting) { setHasStarted(true); observer.disconnect(); } },
+      { threshold: 0.4 }
     );
+    observer.observe(el);
+    return () => observer.disconnect();
+  }, [setHasStarted]);
+ 
+  return (
+    <div ref={ref} data-aos="fade-up" data-aos-delay={delay}
+      className="group bg-[#F6F6F9] rounded-xl px-3 py-6 border border-transparent
+                 text-center transition duration-500 hover:border-[#CCCFD3] hover:bg-white">
+      <div className="flex justify-center items-start gap-2 text-out">
+        <div className="text-xl sm:text-2xl font-bold text-gray-900 flex items-center">
+          {item.icon}
+        </div>
+        <div className="w-full">
+          <div className="text-2xl sm:text-4xl pb-2 group-hover:text-[#F15A23]"
+            style={{ fontWeight: 700, letterSpacing: '-1px' }}>
+            {count}{suffix}
+          </div>
+          <div className="border-t border-dotted border-[#1717171A] pt-2 text-[#494852] text-sm"
+            style={{ letterSpacing: '-0.5px' }}>
+            {item.label}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
 }
+
 
 export default function AboutSection({
     title,

@@ -195,7 +195,7 @@ const AboutUsContainer = () => {
                 <WhyTheyWorkWithUs />
             </div>
 
-            <section className="py-16 bg-[#F6F5F8]">
+            {/* <section className="py-16 bg-[#F6F5F8]">
                 <div className="container mx-auto px-4">
                     <h2 className="text-3xl font-semibold text-center mb-10">About L2 Global Technologies</h2>
                     <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -216,7 +216,32 @@ const AboutUsContainer = () => {
                         ))}
                     </dl>
                 </div>
+            </section> */}
+            <section className="py-16 bg-[#F6F5F8]">
+                <div className="container mx-auto px-4">
+                    <h2 className="text-3xl font-semibold text-center mb-10">
+                        About L2 Global Technologies
+                    </h2>
+                    <dl className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        {[
+                            { term: 'Company name', def: 'L2 Global Technologies' },
+                            { term: 'Type', def: 'IT Integration Consultancy' },
+                            { term: 'Founded', def: '2020' },
+                            { term: 'HQ', def: 'London, United Kingdom' },
+                            { term: 'Also serving', def: 'UAE, Saudi Arabia, Qatar, USA, India' },
+                            { term: 'Specialisations', def: 'Salesforce, SAP, MuleSoft, AWS, Oracle, API' },
+                            { term: 'Projects delivered', def: '182+' },
+                            { term: 'Team size', def: '45+ certified IT experts' },
+                        ].map(({ term, def }) => (
+                            <div key={term} className="bg-white rounded-xl p-5 border border-gray-100">
+                                <dt className="text-xs font-semibold text-[#6F6C90] uppercase mb-2">{term}</dt>
+                                <dd className="font-semibold text-gray-900">{def}</dd>
+                            </div>
+                        ))}
+                    </dl>
+                </div>
             </section>
+
 
 
             <div className=' pt-2 md:pt-8 lg:pt-12'>

@@ -13,6 +13,7 @@ import ServiceServedIndustries from '@/components/web/services/ServiceServedIndu
 import ServiceWhyChooseUs from '@/components/web/services/ServiceWhyChooseUs'
 import { features } from 'process'
 import { BarChart3, Cloud, Database, GitMerge, Shield, Zap } from 'lucide-react'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
 
 const SalesForceContainer = () => {
 
@@ -126,6 +127,30 @@ const SalesForceContainer = () => {
         },
     ];
 
+    const salesforceFaqs = [
+  {
+    q: 'Where can I find a Salesforce consultant near me in the UK?',
+    a: 'L2 Global Technologies provides certified Salesforce consultants across London, Manchester, Birmingham and all UK regions — remote and on-site.',
+  },
+  {
+    q: 'How much does Salesforce consulting cost in the UK?',
+    a: 'UK Salesforce rates: £750–£1,500/day. Full implementations £8,000–£250,000+.',
+  },
+  {
+    q: 'Do you offer Salesforce consulting in Dubai and UAE?',
+    a: 'Yes. L2 Global serves Dubai, Abu Dhabi and all GCC countries with Salesforce CRM implementation, customisation and support.',
+  },
+  {
+    q: 'Can you fix a broken or failing Salesforce project?',
+    a: 'Yes — Salesforce rescue is one of our core specialisms.',
+  },
+  {
+    q: 'How long does Salesforce implementation take?',
+    a: '6–16 weeks depending on scope. L2 Global has delivered 180+ CRM projects.',
+  },
+]
+
+
 
     return (
         <div>
@@ -159,6 +184,8 @@ const SalesForceContainer = () => {
             <ServiceWhyChooseUs />
 
             <ServiceRegions serviceName='Salesforce Implementation & Consulting' />
+
+            <ServiceFAQ faqs={salesforceFaqs} serviceName='Salesforce Implementation & Consulting' />
 
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA

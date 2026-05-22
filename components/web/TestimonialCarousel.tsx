@@ -14,7 +14,6 @@ const testimonials = [
     desc: "From initial brainstorming to final delivery, the team demonstrated exceptional creativity and attention to detail. Their ability to understand our brand and translate it into impactful digital designs truly set them apart.",
     name: "Sophia Moore",
     role: "Marketing Head at BrightEdge Solutions",
-    // img: "/assets/web/home/img-persion1.png",
     img: 'https://api.dicebear.com/7.x/initials/svg?seed=SophiaM&backgroundColor=0F766E'
   },
   {
@@ -23,7 +22,6 @@ const testimonials = [
     desc: "The team consistently delivered high-quality designs backed by innovative thinking. Their structured approach, clear communication, and commitment to deadlines made the entire collaboration smooth and efficient.",
     name: "Adam Smith",
     role: "Founder of TechNova Labs",
-    // img: "/assets/web/home/img-persion1.png",
     img: 'https://api.dicebear.com/7.x/initials/svg?seed=AdamS&backgroundColor=9D174D'
   },
   {
@@ -32,7 +30,6 @@ const testimonials = [
     desc: "Working with L2 Global was a seamless experience. They took the time to understand our requirements and delivered creative solutions that aligned perfectly with our business goals and long-term vision.",
     name: "Mike Warren",
     role: "CEO of NextWave Technologies",
-    // img: "/assets/web/home/img-persion1.png",
     img: 'https://api.dicebear.com/7.x/initials/svg?seed=MikeWarren&backgroundColor=074FDA'
   },
   {
@@ -41,7 +38,6 @@ const testimonials = [
     desc: "Their team brought clarity and confidence to our project by combining technical expertise with strong design sensibilities. The results exceeded our expectations and significantly improved user engagement.",
     name: "Emily Carter",
     role: "Product Manager at Innovex Corp",
-    // img: "/assets/web/home/img-persion1.png",
     img: 'https://api.dicebear.com/7.x/initials/svg?seed=EmilyC&backgroundColor=F15A23'
   },
   {
@@ -50,7 +46,6 @@ const testimonials = [
     desc: "From planning to execution, every stage of the project was handled with professionalism. The team was responsive, adaptable, and delivered solutions that were both functional and visually impressive.",
     name: "Daniel Roberts",
     role: "Operations Director at CloudSphere",
-    // img: "/assets/web/home/img-persion1.png",
     img: 'https://api.dicebear.com/7.x/initials/svg?seed=DanielR&backgroundColor=15803D'
   },
   {
@@ -59,7 +54,6 @@ const testimonials = [
     desc: "L2 Global combined creative thinking with technical excellence to deliver a product that truly reflected our brand values. Their proactive approach and attention to detail made a noticeable difference.",
     name: "Rachel Thompson",
     role: "Head of Digital Strategy at Elevate Studios",
-    // img: "/assets/web/home/img-persion1.png",
     img: 'https://api.dicebear.com/7.x/initials/svg?seed=RachelT&backgroundColor=7C3AED'
   },
 ];
