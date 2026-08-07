@@ -3,9 +3,9 @@ import OracleContainer from '@/containers/services/OracleContainer'
 import React from 'react'
 
 export const metadata = {
-  title: 'Oracle Managed Services Near Me | UK, USA & Dubai | L2 Global',
+  title: 'Oracle Managed Services | UK, Texas USA & UAE | L2 Global',
   description:
-    '24/7 Oracle DBA and Oracle Cloud Infrastructure support near you.' +
+    '24/7 Oracle DBA and Oracle Cloud Infrastructure support ' +
     ' Serving London, New York, Dubai, Riyadh and all GCC countries.' +
     ' Free Oracle health check.',
   alternates: { canonical: 'https://l2global.in/services/oracle-managed-services' },
@@ -25,7 +25,7 @@ const page = () => {
       <ServiceLocalSchema
         serviceName='Oracle Managed Services'
         serviceUrl='https://l2global.in/services/oracle-managed-services'
-        description='24/7 Oracle DBA and Oracle Cloud Infrastructure support near you. Serving London, New York, Dubai, Riyadh and all GCC countries. Free Oracle health check.'
+        description='24/7 Oracle DBA and Oracle Cloud Infrastructure support  Serving London, New York, Dubai, Riyadh and all GCC countries. Free Oracle health check.'
         cities={[
           'London', 'Manchester', 'Birmingham', 'Edinburgh', 'Leeds', 'Bristol',
           'New York', 'Texas', 'California', 'Chicago', 'Houston', 'Los Angeles',

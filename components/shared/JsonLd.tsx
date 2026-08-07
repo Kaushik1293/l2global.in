@@ -13,11 +13,13 @@ export function OrganizationSchema() {
     logo: 'https://l2global.in/assets/web/l2-svg.svg',
     email: 'contactus@l2global.in',
     telephone: '+44-7442-586325',
-    foundingDate: '2020',
+    foundingDate: '2014',
     description: 'Expert Salesforce, SAP, MuleSoft and cloud integration consultants serving UK, USA, UAE, Saudi Arabia and Gulf businesses.',
     address: [
-      { '@type': 'PostalAddress', addressCountry: 'GB', streetAddress: 'Cheltenham Road, Gloucester', postalCode: 'GL2 0JR' },
-      { '@type': 'PostalAddress', addressCountry: 'AE', addressLocality: 'Dubai' },
+      { '@type': 'PostalAddress', addressCountry: 'GB', streetAddress: 'Cheltenham Road, Gloucester', postalCode: 'GL2 0JR', addressRegion: 'England', name: 'L2 Global Technologies Ltd — UK Headquarters' },
+      { '@type': 'PostalAddress', addressCountry: 'US', addressRegion: 'TX', addressLocality: 'Texas', name: 'L2 Global Technologies — Texas USA Office' },
+      { '@type': 'PostalAddress', addressCountry: 'IN', addressLocality: 'Vijayawada', addressRegion: 'Andhra Pradesh', postalCode: '521286', streetAddress: 'Tempalli, Gannavaram, Krishna District', name: 'L2 Global Technologies — India Delivery Centre' },
+      { '@type': 'PostalAddress', addressCountry: 'AE', addressLocality: 'Dubai', name: 'L2 Global Technologies — Dubai Office' },
     ],
     areaServed: ['GB','US','AE','SA','QA','KW','BH','OM','IN'].map(c => ({
       '@type': 'Country', name: c

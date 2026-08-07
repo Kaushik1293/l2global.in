@@ -3,7 +3,7 @@ import ApiIntegrationContainer from '@/containers/services/ApiIntegrationContain
 import React from 'react'
 
 export const metadata = {
-  title: 'API Integration Services Near Me | UK, USA & Gulf | L2 Global',
+  title: 'API Integration Services | UK, Texas USA & UAE | L2 Global',
   description:
     'Professional API and enterprise system integration. Serving UK (London, Birmingham),' +
     ' USA (New York, Texas, California) and Gulf (Dubai, Abu Dhabi, Riyadh).' +

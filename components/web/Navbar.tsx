@@ -88,7 +88,7 @@ const Navbar = () => {
           {/* Desktop */}
           <div className="hidden lg:flex items-center justify-between px-4 md:px-1">
             <Link href="/" className="flex items-center">
-              <Image src={webLogo} alt="webLogo" className="w-48 h-10 object-contain" />
+              <Image src={webLogo} alt="L2 Global Technologies — Salesforce Agentforce AI & SAP Consultants" width={192} height={40} className="w-48 h-10 object-contain" priority />
             </Link>
 
             <div className="hidden md:flex items-center gap-3">

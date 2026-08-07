@@ -3,11 +3,10 @@ import CrmContainer from '@/containers/services/CrmContainer'
 import React from 'react'
 
 export const metadata = {
-  title: 'Salesforce CRM Consulting | Near Me UK, USA & UAE | L2 Global',
+  title: 'Salesforce CRM Consulting | London, Dubai, Houston | L2 Global',
   description:
-    'Expert Salesforce CRM consultants near you. Serving London, Manchester, Birmingham,' +
-    ' New York, Texas, Dubai, Riyadh. 180+ CRM deployments. Fix broken Salesforce projects.' +
-    ' Free consultation.',
+    'Certified Salesforce CRM consultants. Agentforce AI, implementation, rescue projects.' +
+    ' 180+ deployments. UK, Texas USA, UAE. SAP Gold + Salesforce Partner. Free consultation.',
   alternates: { canonical: 'https://l2global.in/services/crm-consulting' },
   openGraph: {
     title: 'Salesforce CRM Consulting | L2 Global Technologies',

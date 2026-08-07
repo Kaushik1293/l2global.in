@@ -91,24 +91,23 @@ export default function ContactForm() {
   const validate = (values = form) => {
     const errs: Record<string, string> = {};
 
+    // REQUIRED: Name
     if (!values.last_name.trim() || values.last_name.length < 2)
-      errs.last_name = "Name must be at least 2 characters";
+      errs.last_name = "Please enter your name";
 
+    // REQUIRED: Email
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email))
-      errs.email = "Enter a valid email";
+      errs.email = "Please enter a valid work email";
 
-    if (!values.mobile || values.mobile.length !== selectedCountry.maxLength)
-      errs.mobile = `Phone must be ${selectedCountry.maxLength} digits`;
+    // REQUIRED: Service
+    if (!values.service)
+      errs.service = "Please select a service";
 
-    if (!values.company.trim() || values.company.length < 2)
-      errs.company = "Company name must be at least 2 characters";
+    // OPTIONAL: Phone — only validate if filled in
+    if (values.mobile && values.mobile.length > 0 && values.mobile.length < 6)
+      errs.mobile = "Phone number seems too short";
 
-    if (
-      !values.city.trim() ||
-      values.city.length < 2 ||
-      !/^[a-zA-Z\s]+$/.test(values.city)
-    )
-      errs.city = "Enter a valid city name";
+    // Company and City: no longer required
 
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -164,10 +163,13 @@ export default function ContactForm() {
               return;
             }
 
-            setForm((prev) => ({
-              ...prev,
-              mobile: `${selectedCountry.phoneCode}${prev.mobile}`,
-            }));
+            // Only prepend country code if phone was actually filled in
+            if (form.mobile.trim()) {
+              setForm((prev) => ({
+                ...prev,
+                mobile: `${selectedCountry.phoneCode}${prev.mobile}`,
+              }));
+            }
 
             setSubmitted(true);
           }}
@@ -277,13 +279,20 @@ export default function ContactForm() {
               onChange={handleChange}
               className='mt-2 w-full rounded-lg ring-1 ring-[#F1EDFF] bg-white px-4 py-3'>
               <option value=''>Select a service...</option>
+              <option value='agentforce'>Salesforce Agentforce AI</option>
+              <option value='sap-ai'>SAP Joule AI Implementation</option>
+              <option value='sap-s4hana'>SAP S/4HANA / RISE with SAP</option>
               <option value='salesforce'>Salesforce / CRM Consulting</option>
               <option value='sap'>SAP Integration & Implementation</option>
               <option value='mulesoft'>MuleSoft Integration</option>
               <option value='api'>API Integration Services</option>
               <option value='aws'>AWS Cloud Services</option>
               <option value='oracle'>Oracle Managed Services</option>
-              <option value='web'>Web Development</option>
+              <option value='data-science'>Data Science & Machine Learning</option>
+              <option value='manufacturing-cloud'>Agentforce Manufacturing Cloud</option>
+              <option value='financial-services'>Financial Services Cloud</option>
+              <option value='cpq'>CPQ & Revenue Cloud</option>
+              <option value='web'>Website Design & Development</option>
               <option value='custom'>Custom IT Solutions</option>
               <option value='other'>Other / Not Sure</option>
             </select>

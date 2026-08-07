@@ -1,57 +1,51 @@
 'use client'
 import React, { useEffect } from 'react'
 import { ArrowUpRight } from "lucide-react";
+import Link from 'next/link';
 import SectionHeader from './SectionHeader';
 import Divider from './Divider';
-import AOS from "aos";
-import "aos/dist/aos.css";
 
 const Services = () => {
    const cards = [
   {
-    title: "Salesforce / CRM",
-    desc: "Expert Salesforce implementation, customisation and support. Trusted by UK, USA and Gulf businesses. 180+ CRM deployments.",
+    title: "Salesforce Agentforce AI & CRM",
+    desc: "Deploy autonomous AI agents with Agentforce. CRM implementation, customisation and managed support. Salesforce Partner. 180+ deployments. UK · Texas · UAE.",
     bg: "bg-[#E5ECFD]",
     icon: "/assets/web/home/services/digital.png",
     border: "border-[#C1C1FF]",
-    iconColor: "#606EE4"
+    iconColor: "#606EE4",
+    href: "/services/salesforce-services",
   },
   {
-    title: "SAP Integration",
-    desc: "SAP S/4HANA, BTP and SAP–Salesforce integration specialists. Serving London, Dubai and New York. Real-time sync delivered.",
+    title: "SAP S/4HANA & Joule AI",
+    desc: "SAP Gold Partner. S/4HANA migration, RISE with SAP, BTP, Joule AI deployment. ECC support ends 2027 — plan your migration now. UK · Texas · UAE.",
     bg: "bg-[#FFEFE1]",
     icon: "/assets/web/home/services/data.png",
     border: "border-[#FFBCA5]",
-    iconColor: "#F49308"
+    iconColor: "#F49308",
+    href: "/services/sap-link-by-salesforce",
   },
   {
-    title: "MuleSoft / API",
-    desc: "Certified MuleSoft Anypoint consultants. 250+ APIs delivered. API-led connectivity for UK, USA and Gulf enterprises.",
+    title: "MuleSoft & API Integration",
+    desc: "Certified MuleSoft Anypoint Partner. 250+ APIs delivered. Connect SAP, Salesforce, Oracle and every system. API-led connectivity. UK · Texas · UAE.",
     bg: "bg-[#FDE7EB]",
     icon: "/assets/web/home/services/web.png",
     border: "border-[#FAC3CC]",
-    iconColor: "#FF7A90"
+    iconColor: "#FF7A90",
+    href: "/services/mulesoft",
   },
   {
-    title: "Cloud & Oracle",
-    desc: "AWS cloud migration, DevOps and Oracle managed services. Serving UK, USA, UAE and Saudi Arabia. Free assessment.",
+    title: "Data Science, AI & Web Development",
+    desc: "Python ML, generative AI, BI dashboards. Salesforce-connected models. Plus B2B website design & development — fixed price, SEO-built-in. UK · Texas · UAE.",
     bg: "bg-[#E4F6DF]",
     icon: "/assets/web/home/services/enterprise.png",
     border: "border-[#ACD99D]",
-    iconColor: "#5D9E4B"
+    iconColor: "#5D9E4B",
+    href: "/services/data-science",
   },
 ];
 
-    useEffect(() => {
-        AOS.init({
-            duration: 900,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 200,
-            anchorPlacement: 'top-bottom'
-        })
-        AOS.refresh()
-    }, [])
+    // AOS initialised globally in AOSProvider — no need to reinitialise here
 
     return (
         <div className='py-10 bg-[#F6F5F8]'>
@@ -69,8 +63,9 @@ const Services = () => {
 
                 <div className="pb-4 md:pb-10 grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6">
                     {cards.map((card, idx) => (
-                        <div
+                        <Link
                             key={idx}
+                            href={card.href || "/services/salesforce-services"}
                             data-aos="zoom-in"
                             data-aos-delay={200 + idx * 150}
                             data-aos-duration="800"
@@ -96,7 +91,7 @@ const Services = () => {
                             <p className="text-gray-600 text-sm md:text-lg leading-relaxed font-normal" style={{ letterSpacing: '-1px', lineHeight: '26px' }}>
                                 {card.desc}
                             </p>
-                        </div>
+                        </Link>
                     ))}
                 </div>
             </div>

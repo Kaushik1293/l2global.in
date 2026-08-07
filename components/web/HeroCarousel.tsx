@@ -28,6 +28,7 @@ const heroSlides = [
         title: { line1: "Generate More", line2: "ROI With Us" },
         desc: "Drive measurable business growth with intelligent digital solutions designed to maximize efficiency and returns, designed for UK, USA and Gulf businesses.",
         img: img1,
+        alt: "Generate more ROI with L2 Global digital solutions",
     },
     {
         id: 2,
@@ -35,6 +36,7 @@ const heroSlides = [
         title: { line1: "Connect Salesforce", line2: "With MuleSoft" },
         desc: "Unify data, automate workflows, and enable seamless enterprise integration using Salesforce and MuleSoft.Trusted by businesses from London to Dubai.",
         img: img2,
+        alt: "Connect Salesforce with MuleSoft integration",
     },
     {
         id: 3,
@@ -42,6 +44,7 @@ const heroSlides = [
         title: { line1: "Transform Business", line2: "With SAP" },
         desc: "Optimize core processes, improve visibility, and scale operations efficiently with our SAP expertise, serving clients from London to Dubai to New York",
         img: img3,
+        alt: "Transform your business with SAP expertise",
     },
     {
         id: 4,
@@ -49,6 +52,7 @@ const heroSlides = [
         title: { line1: "Solutions Across", line2: "Industries" },
         desc: "Delivering tailored digital solutions for healthcare, education, finance, manufacturing, and more across three continents.",
         img: img4,
+        alt: "Tailored digital solutions across industries",
     },
     {
         id: 5,
@@ -56,6 +60,7 @@ const heroSlides = [
         title: { line1: "Driven By", line2: "Innovation & Trust" },
         desc: "A technology partner focused on building scalable, secure, and future-ready digital solutions for global enterprises.",
         img: img5,
+        alt: "Innovation and trust driving digital transformation",
     },
     {
         id: 6,
@@ -63,6 +68,7 @@ const heroSlides = [
         title: { line1: "Let’s Build", line2: "Something Great" },
         desc: "Connect with our experts to discuss your requirements and start your digital transformation journey wherever you are — UK, USA or Gulf.",
         img: img6,
+        alt: "Build something great with L2 Global experts",
     },
 ];
 
@@ -131,11 +137,12 @@ export default function HeroCarousel() {
                                     <div className="md:hidden flex justify-center relative">
                                         <Image
                                             src={t.img}
-                                            alt="Hero Image"
+                                            alt={t.alt}
                                             width={600}
                                             height={600}
                                             className="rounded-3xl object-cover"
-                                            priority
+                                            priority={t.id === 1}
+                                            loading={t.id === 1 ? "eager" : "lazy"}
                                         />
                                         <RotatingBadge />
 
@@ -192,12 +199,12 @@ export default function HeroCarousel() {
 
                                         {/* BUTTONS */}
                                         <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                                            <PrimaryButton onClick={() => setIsContactOpen(true)} label='Get Started' icon={
+                                            <PrimaryButton onClick={() => setIsContactOpen(true)} label='Book a Free Call' icon={
                                                 <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11.25 14L9.64687 12.3667L13.6969 8.16667H0V5.83333H13.6969L9.675 1.63333L11.25 0L18 7L11.25 14Z" fill="white" />
                                                 </svg>
                                             } />
-                                            <OutlineButton name="Watch Demo" />
+                                            {/* Watch Demo button removed — no demo video exists */}
                                         </div>
 
                                         {/* RATING */}
@@ -218,11 +225,12 @@ export default function HeroCarousel() {
                                     <div className="hidden md:flex justify-center relative">
                                         <Image
                                             src={t.img}
-                                            alt="Hero Image"
+                                            alt={t.alt}
                                             width={600}
                                             height={600}
                                             className="rounded-3xl object-cover"
-                                            priority
+                                            priority={t.id === 1}
+                                            loading={t.id === 1 ? "eager" : "lazy"}
                                         />
                                         {/* Rotating Badge Overlay */}
                                         <RotatingBadge />
