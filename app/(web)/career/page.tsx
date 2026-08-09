@@ -4,7 +4,7 @@ import { Metadata } from 'next';
 
 
 export const metadata: Metadata = {
-    title: "L2 Global Technologies | Careers",
+    title: "Careers",
     description:
         "Explore career opportunities at L2 Global Technologies. Join our team of experts delivering Salesforce, SAP, and enterprise IT solutions worldwide.",
     keywords: [
@@ -15,6 +15,13 @@ export const metadata: Metadata = {
         "Tech Company Hiring",
         "Enterprise IT Careers"
     ],
+    alternates: { canonical: 'https://l2global.in/career' },
+    openGraph: {
+        title: 'Careers | L2 Global Technologies',
+        description: 'Explore career opportunities at L2 Global Technologies. Join our team delivering Salesforce, SAP and enterprise IT solutions worldwide.',
+        url: 'https://l2global.in/career',
+        images: ['/assets/web/og-image.png'],
+    },
 }
 
 const page = () => {

@@ -3,11 +3,10 @@ import OracleContainer from '@/containers/services/OracleContainer'
 import React from 'react'
 
 export const metadata = {
-  title: 'Oracle Managed Services | UK, Texas USA & UAE | L2 Global',
+  title: 'Oracle Managed Services | UK & USA',
   description:
-    '24/7 Oracle DBA and Oracle Cloud Infrastructure support ' +
-    ' Serving London, New York, Dubai, Riyadh and all GCC countries.' +
-    ' Free Oracle health check.',
+    '24/7 Oracle DBA and Oracle Cloud Infrastructure support serving London, New York,' +
+    ' Dubai, Riyadh and all GCC countries.',
   alternates: { canonical: 'https://l2global.in/services/oracle-managed-services' },
   openGraph: {
     title: 'Oracle Managed Services | L2 Global Technologies',

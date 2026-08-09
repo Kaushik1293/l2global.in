@@ -25,11 +25,13 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
     }
 
     return {
-        title: `${post.title} | L2 Global Blog`,
+        title: post.title,
         description: post.excerpt,
+        alternates: { canonical: `https://l2global.in/blog/${post.slug}` },
         openGraph: {
             title: post.title,
             description: post.excerpt,
+            url: `https://l2global.in/blog/${post.slug}`,
             images: [post.image],
         },
     }

@@ -3,11 +3,10 @@ import ApiIntegrationContainer from '@/containers/services/ApiIntegrationContain
 import React from 'react'
 
 export const metadata = {
-  title: 'API Integration Services | UK, Texas USA & UAE | L2 Global',
+  title: 'API Integration Services | UK & USA',
   description:
-    'Professional API and enterprise system integration. Serving UK (London, Birmingham),' +
-    ' USA (New York, Texas, California) and Gulf (Dubai, Abu Dhabi, Riyadh).' +
-    ' 250+ APIs delivered. Free consultation.',
+    'Professional API and enterprise system integration serving UK (London, Birmingham),' +
+    ' USA (New York, Texas) and Gulf (Dubai, Riyadh). 250+ APIs delivered.',
   alternates: { canonical: 'https://l2global.in/services/api-integration' },
   openGraph: {
     title: 'API Integration Services | L2 Global Technologies',

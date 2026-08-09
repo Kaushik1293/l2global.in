@@ -28,11 +28,12 @@ export const metadata: Metadata = {
     description: 'UK, Texas USA & UAE IT consultants. Agentforce AI, SAP Gold Partner, MuleSoft. 182+ projects.',
     images: [{ url: '/assets/web/og-image.png', width: 1200, height: 630, alt: 'L2 Global Technologies — Salesforce Agentforce AI & SAP Consultants' }],
   },
+  // No title/description/images here — every page below defines its own openGraph,
+  // and Twitter's crawler falls back to og:title/og:description/og:image when
+  // twitter:title etc. aren't set. Hardcoding them here would override that fallback
+  // with this (homepage-only) text on every other page's social card.
   twitter: {
     card: 'summary_large_image',
-    title: 'Salesforce Agentforce AI & SAP Consultants | L2 Global',
-    description: 'UK · Texas USA · UAE · India. Agentforce AI, SAP Gold Partner, MuleSoft, Data Science.',
-    images: ['/assets/web/og-image.png'],
   },
   robots: {
     index: true, follow: true,
@@ -147,11 +148,29 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />
 
+        {/* hreflang for international targeting */}
+        <link rel="alternate" hrefLang="en-gb" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-us" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-ae" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-sa" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-qa" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-kw" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-bh" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="en-om" href="https://l2global.in" />
+        <link rel="alternate" hrefLang="x-default" href="https://l2global.in" />
+
+        <link rel="icon" href="/favicon.ico" sizes="any" />
+      </head>
+      <body className={`antialiased ${urbanist.className}`}>
         {/*
           GA4 CONSENT MODE v2 — GDPR/UK PECR COMPLIANT
           Step 1: Initialise GA in DENIED state before any other GA code.
           CookieConsent component calls gtag("consent","update",{...granted})
           after the user clicks Accept.
+          Rendered in <body>, not a hand-written <head>, per Next.js App Router
+          guidance for next/script — the previous <head> placement caused the
+          script to be duplicated between SSR output and client-side injection,
+          producing a hydration mismatch on every page.
         */}
         <Script id="ga-consent-init" strategy="beforeInteractive">
           {`
@@ -187,27 +206,22 @@ export default function RootLayout({
           `}
         </Script>
 
-        {/* Organization Schema — appears on every page */}
-        <Script
+        {/*
+          Organization Schema — appears on every page.
+          Plain <script>, not next/script: next/script with no `strategy` prop
+          defaults to "afterInteractive", which injects this client-side AFTER
+          hydration — meaning it never exists in the actual server-rendered HTML.
+          Crawlers that don't execute JavaScript (Facebook, LinkedIn, X, many SEO
+          tools, and Google's non-JS crawl pass) would never see it. A plain
+          <script> renders as part of the real HTML response, same as the
+          ServiceLocalSchema/FAQPage schema blocks elsewhere on the site.
+        */}
+        <script
           id="org-schema"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
 
-        {/* hreflang for international targeting */}
-        <link rel="alternate" hrefLang="en-gb" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-us" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-ae" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-sa" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-qa" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-kw" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-bh" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="en-om" href="https://l2global.in" />
-        <link rel="alternate" hrefLang="x-default" href="https://l2global.in" />
-
-        <link rel="icon" href="/favicon.ico" sizes="any" />
-      </head>
-      <body className={`antialiased ${urbanist.className}`}>
         {children}
 
         <ToastContainer

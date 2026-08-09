@@ -3,11 +3,10 @@ import SapContainer from '@/containers/services/SapContainer'
 import React from 'react'
 
 export const metadata = {
-    title: 'SAP & Salesforce Integration | UK, USA & UAE | L2 Global Technologies',
+    title: 'SAP & Salesforce Integration',
     description:
         'Expert SAP–Salesforce integration consultants serving UK (London, Manchester),' +
-        ' USA (New York, Texas) and Gulf (Dubai, Riyadh, Doha). Real-time sync,' +
-        ' process automation. Free consultation.',
+        ' USA (New York, Texas) and Gulf (Dubai, Riyadh). Real-time sync and automation.',
     alternates: { canonical: 'https://l2global.in/services/sap-link-by-salesforce' },
     openGraph: {
         title: 'SAP & Salesforce Integration | L2 Global Technologies',

@@ -3,10 +3,10 @@ import MulesoftContainer from '@/containers/services/MulesoftContainer'
 import React from 'react'
 
 export const metadata = {
-  title: 'MuleSoft Integration Services | UK, USA & Dubai | L2 Global Technologies',
+  title: 'MuleSoft Integration Services',
   description:
-    'Certified MuleSoft Anypoint Platform consultants near you. Serving London, Manchester,' +
-    ' New York, Texas, Dubai, Abu Dhabi, Riyadh. 250+ APIs delivered. Free consultation.',
+    'Certified MuleSoft Anypoint Platform consultants serving London, Manchester,' +
+    ' New York, Texas and Dubai. 250+ APIs delivered.',
   alternates: { canonical: 'https://l2global.in/services/mulesoft' },
   openGraph: {
     title: 'MuleSoft Integration Services | L2 Global Technologies',
