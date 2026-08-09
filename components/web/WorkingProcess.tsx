@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect } from "react";
-import { SearchCheck, PencilRuler, Rocket, Cog, MessageSquare, PackageCheck, } from "lucide-react";
+import { SearchCheck, Network, Cog, Database, ShieldCheck, Headset, } from "lucide-react";
 import Divider from "./Divider";
 import SectionHeader from "./SectionHeader";
 import AOS from "aos";
@@ -10,39 +10,39 @@ import "aos/dist/aos.css";
 const steps = [
     {
         id: 1,
-        title: "Research & Content Planning",
-        desc: "We analyze goals and audience insights to craft a clear strategic direction.",
+        title: "Discovery",
+        desc: "Deep discovery sessions to understand your business requirements and existing systems architecture.",
         icon: SearchCheck,
     },
     {
         id: 2,
-        title: "Creative Design",
-        desc: "Transforming ideas into engaging visuals that align with your brand identity.",
-        icon: PencilRuler,
+        title: "Architecture",
+        desc: "Designing a scalable Salesforce, SAP, MuleSoft or cloud architecture tailored to your business.",
+        icon: Network,
     },
     {
         id: 3,
-        title: "Development & Execution",
-        desc: "Building robust, scalable digital solutions with clean and efficient code.",
-        icon: Rocket,
-    },
-    {
-        id: 4,
-        title: "Product Prototyping",
-        desc: "Creating interactive mockups to visualize, test, and refine the final experience.",
+        title: "Implementation",
+        desc: "Configuring, developing and integrating your systems with certified, hands-on expertise.",
         icon: Cog,
     },
     {
+        id: 4,
+        title: "Data & Integration",
+        desc: "Migrating data and connecting systems via APIs and middleware for seamless information flow.",
+        icon: Database,
+    },
+    {
         id: 5,
-        title: "Feedback & Refinement",
-        desc: "Collaborating closely with clients to enhance quality and ensure satisfaction.",
-        icon: MessageSquare,
+        title: "Testing & Deployment",
+        desc: "Rigorous UAT, security and performance testing before a smooth production rollout.",
+        icon: ShieldCheck,
     },
     {
         id: 6,
-        title: "Final Delivery & Support",
-        desc: "Delivering the finished product with ongoing support for long-term success.",
-        icon: PackageCheck,
+        title: "Managed Support",
+        desc: "Ongoing monitoring, optimisation and support to keep your systems running at their best.",
+        icon: Headset,
     },
 ];
 
@@ -68,7 +68,7 @@ export default function WorkingProcess() {
             <div className="container mx-auto">
                 <SectionHeader
                     title="Explore Our 6 Step Working Process"
-                    desc="Our 6-step working process ensures clarity, creativity, and consistency from concept to completion"
+                    desc="Our 6-step delivery process ensures clarity, rigor and consistency from discovery through to ongoing support"
                 />
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-8 md:px-6 mx-auto">

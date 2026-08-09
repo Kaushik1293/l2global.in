@@ -121,7 +121,7 @@ const AboutIndustriesSection: FC<IProps> = ({ items, color = "bg-[#F15A23]" }) =
                                     >
                                         <div>
                                             {openId === item.id && (
-                                                <Image src={item.icon} width={60} height={60} alt="icon" />
+                                                <Image src={item.icon} width={60} height={60} alt={`${item.title} icon`} />
                                             )}
 
                                             <h3 className={`${openId === item.id ? "mt-5 " : "mt-0"}text-lg sm:text-xl font-semibold`} style={{ letterSpacing: "-1px" }}>
@@ -171,7 +171,7 @@ const AboutIndustriesSection: FC<IProps> = ({ items, color = "bg-[#F15A23]" }) =
                                     src={activeItem.rightImage}
                                     width={360}
                                     height={360}
-                                    alt="Industry"
+                                    alt={activeItem?.rightTitle || activeItem?.title || 'Industry illustration'}
                                     className={`w-full max-w-xs sm:max-w-md object-contain animate__animated ${animationClass}`}
                                 />
                             )}

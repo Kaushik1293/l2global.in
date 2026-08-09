@@ -119,7 +119,7 @@ const HeroSection = ({
                 >
                     <Image
                         src={image}
-                        alt="Hero Image"
+                        alt={title}
                         className="w-full h-auto object-contain"
                         priority
                     />

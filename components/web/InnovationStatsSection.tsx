@@ -28,10 +28,13 @@ const StatCard: FC<StatCardProps> = ({
     delay = 0,
 }) => {
     const cardRef = useRef<HTMLDivElement | null>(null)
-    const [count, setCount] = useState(0)
-    const [started, setStarted] = useState(false)
-
     const target = parseInt(number, 10)
+    // Start at the real value, not 0 — this is a static export, so whatever renders
+    // here is what crawlers and no-JS visitors permanently see. Only reset to 0 once
+    // the scroll-into-view animation actually begins, so the count-up effect still
+    // plays for users while the initial/server-rendered HTML shows the true number.
+    const [count, setCount] = useState(target)
+    const [started, setStarted] = useState(false)
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -51,6 +54,7 @@ const StatCard: FC<StatCardProps> = ({
     useEffect(() => {
         if (!started) return
 
+        setCount(0)
         let current = 0
         const duration = 3000
         const step = target / (duration / 16)

@@ -53,11 +53,16 @@ type AboutSectionProps = {
 // };
 
 const useCounter = (end: number, duration = 800) => {
-  const [count, setCount] = useState(0);
+  // Start at the real value, not 0 — this is a static export, so whatever renders
+  // here is what crawlers and no-JS visitors permanently see. Only reset to 0 once
+  // the scroll-into-view animation actually begins, so the count-up effect still
+  // plays for users while the initial/server-rendered HTML shows the true number.
+  const [count, setCount] = useState(end);
   const [hasStarted, setHasStarted] = useState(false);
- 
+
   useEffect(() => {
     if (!hasStarted) return;
+    setCount(0);
     let current = 0;
     const step = end / (duration / 16);
     const timer = setInterval(() => {
@@ -201,7 +206,7 @@ export default function AboutSection({
                     >
                         <img
                             src={imageSrc}
-                            alt="About Image"
+                            alt={title}
                             className="w-full h-full object-contain"
                         />
                     </div>

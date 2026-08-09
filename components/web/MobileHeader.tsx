@@ -83,7 +83,7 @@ const MobileHeader = () => {
                         <Link href="/" onClick={onNavigate}>
                             <Image
                                 src={logo}
-                                alt="Logo"
+                                alt="L2 Global Technologies logo"
                                 width={150}
                                 height={80}
                                 priority
@@ -116,7 +116,7 @@ const MobileHeader = () => {
             >
                 {/* SIDEBAR HEADER */}
                 <div className="flex items-center justify-between bg-primary px-4 py-5 border-b border-gray-200">
-                    <Image src={logo} alt="Logo" width={140} height={60} className="w-[140px] h-[60px]" />
+                    <Image src={logo} alt="L2 Global Technologies logo" width={140} height={60} className="w-[140px] h-[60px]" />
                     <button
                         onClick={() => setIsSidebarOpen(false)}
                         className="bg-red-50 h-10 w-10 rounded-md flex items-center justify-center"
