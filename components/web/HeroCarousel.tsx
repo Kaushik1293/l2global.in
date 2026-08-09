@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Smile, Star } from "lucide-react";
 import { useRef, useState } from "react";
 
 import PrimaryButton from "../shared/PrimaryButton";
@@ -15,7 +14,6 @@ import img4 from "../../public/assets/web/home/all-ind-img.png";
 import img5 from "../../public/assets/web/home/trust-img.png";
 import img6 from "../../public/assets/web/home/build-img.png";
 import Typewriter from "typewriter-effect";
-import truspilot from '../../public/assets/web/home/trustpilot.svg';
 import Slider, { Settings } from "react-slick";
 import excellance from '../../public/assets/web/home/excellence.svg';
 import ContactPopup from "../shared/ContactPopup";
@@ -210,18 +208,6 @@ export default function HeroCarousel() {
                                             {/* Watch Demo button removed — no demo video exists */}
                                         </div>
 
-                                        {/* RATING */}
-                                        <div className="flex justify-center md:justify-start items-center gap-4">
-                                            <div className="bg-[#F5AF191A] rounded-full p-3">
-                                                <Star size={24} fill="#F5AF19" stroke="#F5AF19" />
-                                            </div>
-                                            <div>
-                                                <p className="text-xl font-semibold">5.0 Rated</p>
-                                                <p className="text-gray-600 text-sm">Rated superb over 4.5k ratings</p>
-                                            </div>
-                                        </div>
-
-                                        <img src={truspilot.src} className="my-5" alt="Trustpilot rating — L2 Global Technologies" />
                                     </div>
 
                                     {/* IMAGE (DESKTOP) */}

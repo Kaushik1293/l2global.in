@@ -6,8 +6,6 @@ import Image from "next/image";
 import React from "react";
 import { ArrowUp, Heart } from "lucide-react";
 import logo from '@/public/assets/web/home/footer-logo.png'
-import truspilot from '../../public/assets/web/home/trustpilot.svg';
-import googleRating from '../../public/assets/web/home/google-reviews.svg';
 
 
 const year = new Date().getFullYear();
@@ -120,12 +118,6 @@ const Footer: React.FC = () => {
                                 </svg>
 
                             </Link>
-                        </div>
-
-                        {/* Rating */}
-                        <div>
-                            <img src={truspilot.src} className="my-5" alt="Trustpilot rating — L2 Global Technologies" />
-                            <img src={googleRating.src} alt="Google reviews rating — L2 Global Technologies" />
                         </div>
                     </div>
 

@@ -262,12 +262,12 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* City */}
+          {/* Country / Region */}
           <div>
-            <label className="block text-sm font-semibold">City</label>
+            <label className="block text-sm font-semibold">Country / Region</label>
             <input
               name="city"
-              placeholder="Enter city name"
+              placeholder="e.g. UK, USA, UAE, India"
               value={form.city}
               onChange={handleChange}
               className="mt-2 w-full rounded-lg ring-1 ring-[#F1EDFF] bg-white px-4 py-3"

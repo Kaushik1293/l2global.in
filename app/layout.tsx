@@ -143,7 +143,6 @@ export default function RootLayout({
       <head>
         {/* Preconnect for performance */}
         <link rel="preconnect" href="https://flagcdn.com" />
-        <link rel="preconnect" href="https://widget.trustpilot.com" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" />

@@ -191,8 +191,8 @@ const HomeConatiner = () => {
                 /> */}
                 <HeroCTA
                     tag='UK · USA · UAE · India'
-                    heading='Serving Businesses Across Three Continents'
-                    description='From London to Dubai to New York — L2 Global Technologies delivers expert Salesforce, SAP and MuleSoft solutions wherever you are.'
+                    heading='Serving Businesses Across the UK, USA, UAE & India'
+                    description='From London to Dubai to Texas — L2 Global Technologies delivers expert Salesforce, SAP and MuleSoft solutions wherever you are.'
                     primaryBtnText='Book Free Consultation'
                     primaryBtnLink='/contact-us'
                     secondaryBtnText='View Our Services'
