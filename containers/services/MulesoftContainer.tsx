@@ -176,9 +176,9 @@ const MulesoftContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Book Free Consultation"
+                    heading="Ready to Connect Every System?"
+                    description="Partner with L2 Global for MuleSoft Anypoint implementation and API-led connectivity across Salesforce, SAP and beyond."
+                    primaryBtnText="Discuss Your Integration"
                     primaryBtnLink="/contact-us"
                     secondaryBtnText="View Services"
                     secondaryBtnLink="/services"

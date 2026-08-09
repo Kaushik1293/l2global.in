@@ -175,9 +175,9 @@ const DataScienceContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Book Free Consultation"
+                    heading="Ready to Turn Data Into Decisions?"
+                    description="Partner with L2 Global for machine learning, generative AI and BI dashboards built on your real business data."
+                    primaryBtnText="Discuss Your Data & AI Project"
                     primaryBtnLink="/contact-us"
                     secondaryBtnText="View Services"
                     secondaryBtnLink="/services"

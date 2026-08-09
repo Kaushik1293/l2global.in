@@ -132,7 +132,7 @@ const HomeConatiner = () => {
                     title="Who We Are. Learn About Us"
                     subtitle="L2 Global Technologies is a specialist IT integration consultancy delivering Salesforce, SAP, MuleSoft and cloud solutions to businesses across the UK, USA, Gulf region and India."
                     imageSrc={aboutUsImage.src}
-                    buttonText="Read More"
+                    buttonText="Learn More About L2 Global"
                     contactLabel="Take a Quote"
                     contactNumber="+44 7442 586325"
                     stats={[

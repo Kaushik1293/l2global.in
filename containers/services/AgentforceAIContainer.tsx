@@ -176,9 +176,9 @@ const AgentforceAIContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Book Free Consultation"
+                    heading="Ready to Deploy Autonomous AI Agents?"
+                    description="Partner with L2 Global to configure Agentforce agents grounded in your real Salesforce data, with the guardrails your business needs."
+                    primaryBtnText="Discuss Your Agentforce Use Case"
                     primaryBtnLink="/contact-us"
                     secondaryBtnText="View Services"
                     secondaryBtnLink="/services"

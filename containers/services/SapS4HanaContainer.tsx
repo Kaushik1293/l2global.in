@@ -176,9 +176,9 @@ const SapS4HanaContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Book Free Consultation"
+                    heading="Ready to Migrate to S/4HANA?"
+                    description="Partner with L2 Global to plan your SAP S/4HANA or RISE with SAP migration before ECC support ends in 2027."
+                    primaryBtnText="Book an SAP S/4HANA Consultation"
                     primaryBtnLink="/contact-us"
                     secondaryBtnText="View Services"
                     secondaryBtnLink="/services"

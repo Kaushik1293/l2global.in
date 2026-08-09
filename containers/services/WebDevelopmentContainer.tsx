@@ -174,9 +174,9 @@ const WebDevelopmentContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Book Free Consultation"
+                    heading="Ready for a Website That Converts?"
+                    description="Partner with L2 Global for a fixed-price, SEO-built-in website delivered on a fixed timeline."
+                    primaryBtnText="Discuss Your Website Project"
                     primaryBtnLink="/contact-us"
                     secondaryBtnText="View Services"
                     secondaryBtnLink="/services"
