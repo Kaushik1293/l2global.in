@@ -34,10 +34,10 @@ const COUNTRIES = [
 export default function ContactForm() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
   // const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[3]);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const [form, setForm] = useState({
     last_name: "",
@@ -123,61 +123,62 @@ export default function ContactForm() {
     validate(updated);
   };
 
+  const showToast = () => {
+    const toast = document.getElementById("sf-toast");
+    toast?.classList.remove("opacity-0");
+    setTimeout(() => toast?.classList.add("opacity-0"), 4000);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setSubmitError(null);
+    setSubmitting(true);
+
+    // Only prepend country code if phone was actually filled in
+    const mobile = form.mobile.trim()
+      ? `${selectedCountry.phoneCode}${form.mobile.trim()}`
+      : "";
+
+    try {
+      const res = await fetch("/.netlify/functions/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, mobile }),
+      });
+      const result = await res.json();
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.error || "Submission failed");
+      }
+
+      setForm({
+        last_name: "",
+        email: "",
+        mobile: "",
+        company: "",
+        city: "",
+        description: "",
+        service: ""
+      });
+      showToast();
+    } catch (err) {
+      setSubmitError(
+        "Something went wrong sending your request. Please try again, or email us directly at contactus@l2global.in."
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
-      <iframe
-        ref={iframeRef}
-        name="sf_hidden_iframe"
-        className="hidden"
-        onLoad={() => {
-          if (submitted) {
-            setSubmitted(false);
-            setForm({
-              last_name: "",
-              email: "",
-              mobile: "",
-              company: "",
-              city: "",
-              description: "",
-              service: ""
-            });
-
-            setTimeout(() => {
-              const toast = document.getElementById("sf-toast");
-              toast?.classList.remove("opacity-0");
-              setTimeout(() => toast?.classList.add("opacity-0"), 4000);
-            }, 300);
-          }
-        }}
-      />
-
       <div className="rounded-3xl bg-[#FCFCFC] p-6 sm:p-8 ring-1 ring-[#F1EDFF] relative">
         <form
-          target="sf_hidden_iframe"
-          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D4P0000010dcs"
-          method="POST"
           className="space-y-6"
-          onSubmit={(e) => {
-            if (!validate()) {
-              e.preventDefault();
-              return;
-            }
-
-            // Only prepend country code if phone was actually filled in
-            if (form.mobile.trim()) {
-              setForm((prev) => ({
-                ...prev,
-                mobile: `${selectedCountry.phoneCode}${prev.mobile}`,
-              }));
-            }
-
-            setSubmitted(true);
-          }}
+          onSubmit={handleSubmit}
         >
-          <input type='hidden' name='lead_source' value='Website' />
-          <input type="hidden" name="oid" value="00D4P0000010dcs" />
-          <input type="hidden" name="retURL" value="" />
-
           {/* Name */}
           <div>
             <label className="block text-sm font-semibold">Name</label>
@@ -214,7 +215,7 @@ export default function ContactForm() {
                   onClick={() => setOpen(!open)}
                   className="w-full rounded-lg ring-1 ring-[#F1EDFF] bg-white px-3 py-3 flex gap-2"
                 >
-                  <Image src={selectedCountry.flag} alt="" width={20} height={14} />
+                  <Image src={selectedCountry.flag} alt={`${selectedCountry.name} flag`} width={20} height={14} />
                   +{selectedCountry.phoneCode}
                 </button>
 
@@ -296,6 +297,7 @@ export default function ContactForm() {
               <option value='custom'>Custom IT Solutions</option>
               <option value='other'>Other / Not Sure</option>
             </select>
+            {errors.service && <p className="text-xs text-red-500">{errors.service}</p>}
           </div>
 
 
@@ -312,12 +314,17 @@ export default function ContactForm() {
             />
           </div>
 
+          {submitError && (
+            <p className="text-sm text-red-500">{submitError}</p>
+          )}
+
           <button
             type="submit"
-            className="rounded-full cursor-pointer px-5 py-3 text-white font-semibold shadow-md transition-all hover:scale-[1.02]"
+            disabled={submitting}
+            className="rounded-full cursor-pointer px-5 py-3 text-white font-semibold shadow-md transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
             style={{ background: "linear-gradient(to bottom, #4684FF, #074FDA)" }}
           >
-            Request Free Consultation
+            {submitting ? "Sending..." : "Request Free Consultation"}
           </button>
         </form>
 

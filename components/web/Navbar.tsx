@@ -23,13 +23,13 @@ const industries = [
 
 // Services
 const services = [
-  { label: 'Salesforce Services', href: '/services/salesforce-services' },
-  { label: 'SAP Link by Salesforce', href: '/services/sap-link-by-salesforce' },
-  { label: 'MuleSoft', href: '/services/mulesoft' },
+  { label: 'Salesforce Consulting Services', href: '/services/salesforce-services' },
+  { label: 'SAP & Salesforce Integration', href: '/services/sap-link-by-salesforce' },
+  { label: 'MuleSoft Integration Services', href: '/services/mulesoft' },
   { label: 'Oracle Managed Services', href: '/services/oracle-managed-services' },
-  { label: 'API Integration', href: '/services/api-integration' },
-  { label: 'AWS Cloud Services', href: '/services/aws-cloud-services' },
-  { label: 'CRM Consulting', href: '/services/crm-consulting' },
+  { label: 'API Integration Services', href: '/services/api-integration' },
+  { label: 'AWS Cloud Migration & DevOps', href: '/services/aws-cloud-services' },
+  { label: 'Salesforce CRM Consulting', href: '/services/crm-consulting' },
 ];
 
 const companyLinks = [
@@ -81,6 +81,81 @@ const Navbar = () => {
         className={`fixed top-0 z-50 w-full transition-all duration-300
         ${scrolled ? 'bg-white shadow' : 'bg-transparent mt-5 px-4 md:px-0'}`}
       >
+        {!scrolled && (
+          <div className="hidden lg:block container mx-auto mb-2 rounded-full border border-[#C1D5FF] bg-white">
+            <div className="flex items-center justify-between px-4 py-2 text-sm">
+              <div className="flex items-center gap-6">
+                <a
+                  href="tel:+447442586325"
+                  className="flex items-center gap-2 text-gray-700 tracking-[-0.5px] transition-colors hover:text-[#F15A23]"
+                >
+                  <Phone size={14} className="text-[#F15A23]" />
+                  +44 7442 586325
+                </a>
+                <a
+                  href="tel:+919000014701"
+                  className="flex items-center gap-2 text-gray-700 tracking-[-0.5px] transition-colors hover:text-[#F15A23]"
+                >
+                  <Phone size={14} className="text-[#F15A23]" />
+                  +91 90000 14701
+                </a>
+              </div>
+
+              <div className="flex items-center gap-4">
+                <a
+                  aria-label="Facebook"
+                  href="https://www.facebook.com/l2globaltechnologies"
+                  target="_blank"
+                  className="text-gray-700 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-110"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0,0,256,256">
+                    <g fill="#f15a23" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none"><g transform="scale(8.53333,8.53333)"><path d="M12,27v-12h-4v-4h4v-2.148c0,-4.067 1.981,-5.852 5.361,-5.852c1.619,0 2.475,0.12 2.88,0.175v3.825h-2.305c-1.435,0 -1.936,0.757 -1.936,2.291v1.709h4.205l-0.571,4h-3.634v12z"></path></g></g>
+                  </svg>
+                </a>
+                <a
+                  aria-label="Twitter"
+                  href="https://twitter.com/l2globaltech"
+                  target="_blank"
+                  className="text-gray-700 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-110"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0,0,256,256">
+                    <g fill="#f15a23" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none"><g transform="scale(5.12,5.12)"><path d="M6.91992,6l14.2168,20.72656l-14.9082,17.27344h3.17773l13.13867,-15.22266l10.44141,15.22266h10.01367l-14.87695,-21.6875l14.08008,-16.3125h-3.17578l-12.31055,14.26172l-9.7832,-14.26172z"></path></g></g>
+                  </svg>
+                </a>
+                <a
+                  aria-label="Instagram"
+                  href="https://www.instagram.com/l2globaltechnologies"
+                  target="_blank"
+                  className="text-gray-700 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-110"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0,0,256,256">
+                    <g fill="#f15a23" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none"><g transform="scale(8.53333,8.53333)"><path d="M9.99805,3c-3.859,0 -6.99805,3.14195 -6.99805,7.00195v10c0,3.859 3.14195,6.99805 7.00195,6.99805h10c3.859,0 6.99805,-3.14195 6.99805,-7.00195v-10c0,-3.859 -3.14195,-6.99805 -7.00195,-6.99805zM22,7c0.552,0 1,0.448 1,1c0,0.552 -0.448,1 -1,1c-0.552,0 -1,-0.448 -1,-1c0,-0.552 0.448,-1 1,-1zM15,9c3.309,0 6,2.691 6,6c0,3.309 -2.691,6 -6,6c-3.309,0 -6,-2.691 -6,-6c0,-3.309 2.691,-6 6,-6zM15,11c-2.20914,0 -4,1.79086 -4,4c0,2.20914 1.79086,4 4,4c2.20914,0 4,-1.79086 4,-4c0,-2.20914 -1.79086,-4 -4,-4z"></path></g></g>
+                  </svg>
+                </a>
+                <a
+                  aria-label="LinkedIn"
+                  href="https://www.linkedin.com/company/l2-global-technologies"
+                  target="_blank"
+                  className="text-gray-700 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-110"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0,0,256,256">
+                    <g fill="#f15a23" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none"><g transform="scale(8.53333,8.53333)"><path d="M24,4h-18c-1.105,0 -2,0.895 -2,2v18c0,1.105 0.895,2 2,2h18c1.105,0 2,-0.895 2,-2v-18c0,-1.105 -0.895,-2 -2,-2zM10.954,22h-2.95v-9.492h2.95zM9.449,11.151c-0.951,0 -1.72,-0.771 -1.72,-1.72c0,-0.949 0.77,-1.719 1.72,-1.719c0.948,0 1.719,0.771 1.719,1.719c0,0.949 -0.771,1.72 -1.719,1.72zM22.004,22h-2.948v-4.616c0,-1.101 -0.02,-2.517 -1.533,-2.517c-1.535,0 -1.771,1.199 -1.771,2.437v4.696h-2.948v-9.492h2.83v1.297h0.04c0.394,-0.746 1.356,-1.533 2.791,-1.533c2.987,0 3.539,1.966 3.539,4.522z"></path></g></g>
+                  </svg>
+                </a>
+                <a
+                  aria-label="YouTube"
+                  href="https://www.youtube.com/@l2globaltechnologies"
+                  target="_blank"
+                  className="text-gray-700 transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-110"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0,0,256,256">
+                    <g fill="none" fillRule="nonzero" stroke="none" strokeWidth="1" strokeLinecap="butt" strokeLinejoin="miter" strokeMiterlimit="10" strokeDasharray="" strokeDashoffset="0" fontFamily="none" fontWeight="none" fontSize="none"><g transform="scale(5.33333,5.33333)"><path d="M43.2,33.9c-0.4,2.1 -2.1,3.7 -4.2,4c-3.3,0.5 -8.8,1.1 -15,1.1c-6.1,0 -11.6,-0.6 -15,-1.1c-2.1,-0.3 -3.8,-1.9 -4.2,-4c-0.4,-2.3 -0.8,-5.7 -0.8,-9.9c0,-4.2 0.4,-7.6 0.8,-9.9c0.4,-2.1 2.1,-3.7 4.2,-4c3.3,-0.5 8.8,-1.1 15,-1.1c6.2,0 11.6,0.6 15,1.1c2.1,0.3 3.8,1.9 4.2,4c0.4,2.3 0.9,5.7 0.9,9.9c-0.1,4.2 -0.5,7.6 -0.9,9.9z" fill="#f15a23"></path><path d="M20,31v-14l12,7z" fill="#ffffff"></path></g></g>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        )}
         <div
           className={`container mx-auto py-3
           ${scrolled ? '' : 'rounded-full border border-[#C1D5FF] bg-white'}`}

@@ -25,7 +25,9 @@ export default function HeroCTA({
   heading,
   description,
   primaryBtnText = "Get Started",
+  primaryBtnLink,
   secondaryBtnText = "Watch Demo",
+  secondaryBtnLink = "/contact-us",
 }: HeroCTAProps) {
 
   const [isContactOpen, setIsContactOpen] = useState(false);
@@ -85,13 +87,18 @@ export default function HeroCTA({
           data-aos="zoom-in"
           data-aos-delay="600"
         >
-          <PrimaryButton label='Get Started' onClick={() => setIsContactOpen(true)} icon={<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M11.25 14L9.64687 12.3667L13.6969 8.16667H0V5.83333H13.6969L9.675 1.63333L11.25 0L18 7L11.25 14Z" fill="white" />
-          </svg>
-          } />
+          <PrimaryButton
+            label={primaryBtnText}
+            href={primaryBtnLink}
+            onClick={primaryBtnLink ? undefined : () => setIsContactOpen(true)}
+            icon={<svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M11.25 14L9.64687 12.3667L13.6969 8.16667H0V5.83333H13.6969L9.675 1.63333L11.25 0L18 7L11.25 14Z" fill="white" />
+            </svg>
+            } />
 
           <GradientButton
             label={secondaryBtnText}
+            href={secondaryBtnLink}
             className="
               w-full sm:w-auto justify-center
               bg-linear-to-b from-gray-800 to-gray-900

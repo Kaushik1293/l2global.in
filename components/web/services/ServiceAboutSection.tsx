@@ -50,7 +50,7 @@ const ServiceAboutSection: React.FC<IProps> = ({
                         </div>
 
                         <div className="px-4">
-                            <h1
+                            <h2
                                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold text-[#0D1526] leading-tight tracking-[-1px] md:tracking-[-2px] lg:tracking-[-3px]"
                                 data-aos="fade-up"
                                 data-aos-delay="100"
@@ -58,7 +58,7 @@ const ServiceAboutSection: React.FC<IProps> = ({
                                 {titleBefore}{" "}
                                 <span className={styles.gradientText}>{linearText}</span>{" "}
                                 {titleAfter}
-                            </h1>
+                            </h2>
 
                             <p
                                 className="text-sm sm:text-base md:text-lg text-[#707A8F] mt-4 font-normal leading-relaxed tracking-[-0.3px] sm:tracking-[-0.5px]"

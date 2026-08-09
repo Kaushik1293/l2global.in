@@ -80,13 +80,13 @@ const CareerBenefits = () => {
                         </div>
 
                         {/* Title */}
-                        <h1
+                        <h2
                             className="md:tracking-[-4px] tracking-[-1px] text-2xl sm:text-3xl md:text-5xl font-medium text-black leading-snug text-center lg:text-left"
                             data-aos="fade-up"
                             data-aos-delay="200"
                         >
                             Why you Should Join Our Awesome Team
-                        </h1>
+                        </h2>
 
                         {/* Description */}
                         <p

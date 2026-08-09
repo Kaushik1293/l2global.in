@@ -31,13 +31,13 @@ const companyLinks = [
 ]
 
 const services = [
-    { label: 'Salesforce Services', href: '/services/salesforce-services' },
-    { label: 'SAP Link by Salesforce', href: '/services/sap-link-by-salesforce' },
-    { label: 'MuleSoft', href: '/services/mulesoft' },
+    { label: 'Salesforce Consulting Services', href: '/services/salesforce-services' },
+    { label: 'SAP & Salesforce Integration', href: '/services/sap-link-by-salesforce' },
+    { label: 'MuleSoft Integration Services', href: '/services/mulesoft' },
     { label: 'Oracle Managed Services', href: '/services/oracle-managed-services' },
-    { label: 'API Integration', href: '/services/api-integration' },
-    { label: 'AWS Cloud Services', href: '/services/aws-cloud-services' },
-    { label: 'CRM Consulting', href: '/services/crm-consulting' },
+    { label: 'API Integration Services', href: '/services/api-integration' },
+    { label: 'AWS Cloud Migration & DevOps', href: '/services/aws-cloud-services' },
+    { label: 'Salesforce CRM Consulting', href: '/services/crm-consulting' },
 ]
 
 type ViewType = "MENU" | "INDUSTRIES" | "COMPANY" | "SERVICES"
@@ -87,7 +87,7 @@ const MobileHeader = () => {
                                 width={150}
                                 height={80}
                                 priority
-                                className="object-contain"
+                                className="w-[150px] h-20 object-contain"
                             />
                         </Link>
                     </div>
@@ -116,7 +116,7 @@ const MobileHeader = () => {
             >
                 {/* SIDEBAR HEADER */}
                 <div className="flex items-center justify-between bg-primary px-4 py-5 border-b border-gray-200">
-                    <Image src={logo} alt="Logo" width={140} height={60} />
+                    <Image src={logo} alt="Logo" width={140} height={60} className="w-[140px] h-[60px]" />
                     <button
                         onClick={() => setIsSidebarOpen(false)}
                         className="bg-red-50 h-10 w-10 rounded-md flex items-center justify-center"

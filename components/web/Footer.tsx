@@ -35,7 +35,7 @@ const footerLinks = {
         { label: 'SAP S/4HANA & RISE with SAP', href: '/services/sap' },
         { label: 'SAP & Salesforce Integration', href: '/services/sap-link-by-salesforce' },
         { label: 'MuleSoft Integration', href: '/services/mulesoft' },
-        { label: 'CRM Consulting', href: '/services/crm-consulting' },
+        { label: 'Salesforce CRM Consulting', href: '/services/crm-consulting' },
         { label: 'Data Science & AI/ML', href: '/services/data-science' },
         { label: 'Website Development', href: '/services/web-development' },
         { label: 'API Integration', href: '/services/api-integration' },
@@ -45,7 +45,7 @@ const footerLinks = {
 
     Industries: [
         { label: "Education", href: "/industries/education" },
-        { label: "Healthcare", href: "/industries/healthcare" },
+        { label: "Healthcare", href: "/industries/health-care" },
         { label: "Real Estate", href: "/industries/real-estate" },
         { label: "Manufacturing", href: "/industries/manufacturing" },
         { label: "Non Profit Organizations", href: "/industries/non-profit" },
@@ -124,8 +124,8 @@ const Footer: React.FC = () => {
 
                         {/* Rating */}
                         <div>
-                            <img src={truspilot.src} className="my-5" />
-                            <img src={googleRating.src} />
+                            <img src={truspilot.src} className="my-5" alt="Trustpilot rating — L2 Global Technologies" />
+                            <img src={googleRating.src} alt="Google reviews rating — L2 Global Technologies" />
                         </div>
                     </div>
 
@@ -192,7 +192,7 @@ const Footer: React.FC = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/industries/healthcare"
+                                <Link href="/industries/health-care"
                                     className="hover:text-[#F15A23] text-[#6F6C90] transition-colors duration-500 tracking-[-0.5px]">
                                     Healthcare
                                 </Link>
