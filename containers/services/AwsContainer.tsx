@@ -169,10 +169,10 @@ const AwsContainer = () => {
                     tag="Let's Grow Together"
                     heading="Expand Your Business with Us!"
                     description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Get Started"
-                    primaryBtnLink="/get-started"
-                    secondaryBtnText="Watch Demo"
-                    secondaryBtnLink="/demo"
+                    primaryBtnText="Book Free Consultation"
+                    primaryBtnLink="/contact-us"
+                    secondaryBtnText="View Services"
+                    secondaryBtnLink="/services"
                 />
 
             </div>

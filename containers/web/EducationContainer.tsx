@@ -16,6 +16,26 @@ import img3 from '@/public/assets/web/services/step3-img.svg'
 import img4 from '@/public/assets/web/services/step4-img.svg'
 import img5 from '@/public/assets/web/services/step5-img.svg'
 import HeroCTA from '@/components/web/HeroCTA'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
+
+const educationFaqs = [
+    {
+        q: 'Do you build Salesforce for Education solutions near me?',
+        a: 'Yes. L2 Global delivers education technology solutions across the UK and UAE, for universities and K-12 institutions. Free consultation at l2global.in/contact-us.'
+    },
+    {
+        q: 'What education technology services does L2 Global offer?',
+        a: 'Salesforce for Schools implementation, student lifecycle management and digital transformation for universities and K-12 institutions.'
+    },
+    {
+        q: 'Can you integrate our student information system with Salesforce?',
+        a: 'Yes. We specialise in integrating existing student information systems and learning platforms with Salesforce.'
+    },
+    {
+        q: 'How much does a Salesforce for Education implementation cost?',
+        a: 'Costs vary by institution size and scope. Free scoping consultation available to provide an accurate estimate.'
+    },
+]
 
 
 const steps: StepItem[] = [
@@ -191,13 +211,15 @@ const EducationContainer = () => {
           tag="Let's Grow Together"
           heading="Expand Your Business with Us!"
           description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-          primaryBtnText="Get Started"
-          primaryBtnLink="/get-started"
-          secondaryBtnText="Watch Demo"
-          secondaryBtnLink="/demo"
+          primaryBtnText="Book Free Consultation"
+          primaryBtnLink="/contact-us"
+          secondaryBtnText="View Services"
+          secondaryBtnLink="/services"
         />
 
       </div>
+
+      <ServiceFAQ faqs={educationFaqs} serviceName='Education Technology' />
 
     </div>
   )

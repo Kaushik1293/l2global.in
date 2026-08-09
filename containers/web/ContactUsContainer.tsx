@@ -226,7 +226,7 @@ const ContactUsContainer = () => {
                     primaryBtnText='Book Free Consultation'
                     primaryBtnLink='/contact-us'
                     secondaryBtnText='View Services'
-                    secondaryBtnLink='/services/sap-link-by-salesforce'
+                    secondaryBtnLink='/services'
 
                 />
 

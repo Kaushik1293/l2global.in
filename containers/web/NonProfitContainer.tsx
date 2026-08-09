@@ -16,6 +16,26 @@ import img3 from '@/public/assets/web/services/step3-img.svg'
 import img4 from '@/public/assets/web/services/step4-img.svg'
 import img5 from '@/public/assets/web/services/step5-img.svg'
 import HeroCTA from '@/components/web/HeroCTA'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
+
+const nonProfitFaqs = [
+    {
+        q: 'Do you build Salesforce Nonprofit Cloud solutions near me?',
+        a: 'Yes. L2 Global delivers non-profit technology solutions across the UK, UAE and GCC. Free consultation at l2global.in/contact-us.'
+    },
+    {
+        q: 'What non-profit technology services does L2 Global offer?',
+        a: 'Salesforce Nonprofit Cloud implementation, donor engagement platforms and impact management solutions for charities and NGOs.'
+    },
+    {
+        q: 'Do you offer discounted rates for charities?',
+        a: 'We work with each non-profit to find the right scope for their budget. Contact us for a free consultation to discuss your needs.'
+    },
+    {
+        q: 'Can you help migrate our donor database to Salesforce?',
+        a: 'Yes. We specialise in migrating donor and programme data into Salesforce Nonprofit Cloud with minimal disruption.'
+    },
+]
 
 
 const steps: StepItem[] = [
@@ -105,10 +125,10 @@ const NonProfitContainer = () => {
             description={
               <>
                 <p>
-                  Every project reflects our passion for innovation and excellence, delivering measurable success in digital education through engaging, outcome-driven solutions
+                  Every project reflects our passion for innovation and excellence, delivering measurable social impact through engaging, outcome-driven solutions
                 </p>
                 <p>
-                  Through thoughtful design and modern technology, we help institutions adapt and thrive—turning ideas into meaningful learning experiences.
+                  Through thoughtful design and modern technology, we help non-profits adapt and thrive—turning ideas into meaningful community impact.
                 </p>
               </>
             }
@@ -167,17 +187,17 @@ const NonProfitContainer = () => {
           <Divider className="text-black" blur={true} pillClassName='bg-[#F6F6F9]' label={'Our Developers'} />
         </div>
         <div className='mt-1'>
-          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality education software solutions.' />
+          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality non-profit software solutions.' />
         </div>
         <DeveloperCard
           paragraphs={[
-            "Our development team combines deep technical expertise with a strong understanding of modern education platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving learning needs, ensuring long-term value for institutions and learners alike.",
-            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms the education landscape. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
-            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify learning and management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in education technology."
+            "Our development team combines deep technical expertise with a strong understanding of modern non-profit platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving donor and programme needs, ensuring long-term value for organisations and the communities they serve.",
+            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms how non-profits operate. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your mission.",
+            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify donor engagement and impact management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in non-profit technology."
           ]}
           buttonLabel="Get A Quote"
           phoneLabel="Take a Call"
-          phoneNumber="+91 97403 39495"
+          phoneNumber="+91 90000 14701"
           image={developerImg.src}
           badgeText={`Expert\nDeveloper\nTeam`}
         />
@@ -188,13 +208,15 @@ const NonProfitContainer = () => {
           tag="Let's Grow Together"
           heading="Expand Your Business with Us!"
           description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-          primaryBtnText="Get Started"
-          primaryBtnLink="/get-started"
-          secondaryBtnText="Watch Demo"
-          secondaryBtnLink="/demo"
+          primaryBtnText="Book Free Consultation"
+          primaryBtnLink="/contact-us"
+          secondaryBtnText="View Services"
+          secondaryBtnLink="/services"
         />
 
       </div>
+
+      <ServiceFAQ faqs={nonProfitFaqs} serviceName='Non-Profit Technology' />
 
     </div>
   )

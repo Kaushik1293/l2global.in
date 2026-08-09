@@ -196,7 +196,7 @@ const HomeConatiner = () => {
                     primaryBtnText='Book Free Consultation'
                     primaryBtnLink='/contact-us'
                     secondaryBtnText='View Our Services'
-                    secondaryBtnLink='/services/sap-link-by-salesforce'
+                    secondaryBtnLink='/services'
                 />
 
 

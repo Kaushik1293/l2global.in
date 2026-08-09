@@ -16,6 +16,26 @@ import img3 from '@/public/assets/web/services/step3-img.svg'
 import img4 from '@/public/assets/web/services/step4-img.svg'
 import img5 from '@/public/assets/web/services/step5-img.svg'
 import HeroCTA from '@/components/web/HeroCTA'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
+
+const healthCareFaqs = [
+    {
+        q: 'Do you build Salesforce Health Cloud solutions near me?',
+        a: 'Yes. L2 Global delivers healthcare IT solutions across the UK, USA and Gulf (Dubai, Riyadh), including for NHS trusts. Free consultation at l2global.in/contact-us.'
+    },
+    {
+        q: 'What healthcare technology services does L2 Global offer?',
+        a: 'Salesforce Health Cloud implementation, patient engagement platforms, and digital transformation for hospitals, clinics and healthcare providers.'
+    },
+    {
+        q: 'Can you help with NHS-compliant patient data systems?',
+        a: 'Yes. We build patient-centric systems designed with UK healthcare compliance and data protection requirements in mind.'
+    },
+    {
+        q: 'How long does a healthcare CRM implementation take?',
+        a: 'Timelines depend on scope and integration complexity. Free consultation to scope your project and provide an accurate timeline.'
+    },
+]
 
 
 const steps: StepItem[] = [
@@ -110,10 +130,10 @@ const HealthCareContainer = () => {
             description={
               <>
                 <p>
-                  Every project reflects our passion for innovation and excellence, delivering measurable success in digital education through engaging, outcome-driven solutions
+                  Every project reflects our passion for innovation and excellence, delivering measurable success in digital healthcare through engaging, outcome-driven solutions
                 </p>
                 <p>
-                  Through thoughtful design and modern technology, we help institutions adapt and thrive—turning ideas into meaningful learning experiences.
+                  Through thoughtful design and modern technology, we help healthcare providers adapt and thrive—turning ideas into meaningful patient experiences.
                 </p>
               </>
             }
@@ -171,17 +191,17 @@ const HealthCareContainer = () => {
           <Divider className="text-black" blur={true} pillClassName='bg-[#F6F6F9]' label={'Our Developers'} />
         </div>
         <div className='mt-1'>
-          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality education software solutions.' />
+          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality healthcare software solutions.' />
         </div>
         <DeveloperCard
           paragraphs={[
-            "Our development team combines deep technical expertise with a strong understanding of modern education platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving learning needs, ensuring long-term value for institutions and learners alike.",
-            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms the education landscape. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
-            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify learning and management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in education technology."
+            "Our development team combines deep technical expertise with a strong understanding of modern healthcare platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and compliant with evolving regulatory needs, ensuring long-term value for providers and patients alike.",
+            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms patient care. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
+            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify patient care and hospital management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in healthcare technology."
           ]}
           buttonLabel="Get A Quote"
           phoneLabel="Take a Call"
-          phoneNumber="+91 97403 39495"
+          phoneNumber="+91 90000 14701"
           image={developerImg.src}
           badgeText={`Expert\nDeveloper\nTeam`}
         />
@@ -192,13 +212,15 @@ const HealthCareContainer = () => {
           tag="Let's Grow Together"
           heading="Expand Your Business with Us!"
           description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-          primaryBtnText="Get Started"
-          primaryBtnLink="/get-started"
-          secondaryBtnText="Watch Demo"
-          secondaryBtnLink="/demo"
+          primaryBtnText="Book Free Consultation"
+          primaryBtnLink="/contact-us"
+          secondaryBtnText="View Services"
+          secondaryBtnLink="/services"
         />
 
       </div>
+
+      <ServiceFAQ faqs={healthCareFaqs} serviceName='Healthcare Technology' />
 
     </div>
   )

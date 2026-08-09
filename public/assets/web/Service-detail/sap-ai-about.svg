@@ -1,0 +1,41 @@
+<svg width="760" height="560" viewBox="0 0 760 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="sapAiAboutBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E5ECFD"/>
+      <stop offset="100%" stop-color="#F3ECFB"/>
+    </linearGradient>
+    <linearGradient id="sapAiAboutCore" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#195DF0"/>
+      <stop offset="100%" stop-color="#8152E0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="760" height="560" rx="32" fill="url(#sapAiAboutBg)"/>
+
+  <circle cx="380" cy="280" r="120" fill="url(#sapAiAboutCore)"/>
+  <path d="M380 220 l16 44 44 16 -44 16 -16 44 -16 -44 -44 -16 44 -16 z" fill="#ffffff"/>
+
+  <g>
+    <rect x="60" y="70" width="210" height="60" rx="18" fill="#ffffff"/>
+    <circle cx="90" cy="100" r="13" fill="#195DF0"/>
+    <text x="114" y="106" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#0D1526">Natural Language Q&amp;A</text>
+  </g>
+
+  <g>
+    <rect x="500" y="70" width="200" height="60" rx="18" fill="#ffffff"/>
+    <circle cx="530" cy="100" r="13" fill="#8152E0"/>
+    <text x="554" y="106" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#0D1526">Process Automation</text>
+  </g>
+
+  <g>
+    <rect x="40" y="420" width="220" height="60" rx="18" fill="#ffffff"/>
+    <circle cx="70" cy="450" r="13" fill="#2DB470"/>
+    <text x="94" y="456" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#0D1526">SAP BTP Native</text>
+  </g>
+
+  <g>
+    <rect x="500" y="420" width="220" height="60" rx="18" fill="#ffffff"/>
+    <circle cx="530" cy="450" r="13" fill="#F49308"/>
+    <text x="554" y="456" font-family="Arial, sans-serif" font-size="17" font-weight="600" fill="#0D1526">RISE with SAP Ready</text>
+  </g>
+</svg>
