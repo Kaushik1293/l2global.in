@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import React from 'react'
+import { trackEvent } from '@/lib/gtag'
 import callimg from '../../public/assets/web/contact-us/call-Icon.svg';
 import locationimg from '../../public/assets/web/contact-us/location-icon.svg';
 import emailimg from '../../public/assets/web/contact-us/email-Icon.svg';
@@ -40,6 +41,7 @@ const ContactSection = () => {
                                     <p className='text-gray-500 text-sm'>🇬🇧 UK (primary)</p>
                                     <Link
                                         href="tel:+447442586325"
+                                        onClick={() => trackEvent('phone_click', { number: '+447442586325', location: 'contact_section' })}
                                         className='font-semibold text-lg text-gray-900 hover:text-[#1a56db] transition-colors'
                                     >
                                         +44 7442 586325
@@ -54,6 +56,7 @@ const ContactSection = () => {
                                     <p className='text-gray-500 text-sm'>🇮🇳 India</p>
                                     <Link
                                         href="tel:+919000014701"
+                                        onClick={() => trackEvent('phone_click', { number: '+919000014701', location: 'contact_section' })}
                                         className='font-semibold text-lg text-gray-900 hover:text-[#1a56db] transition-colors'
                                     >
                                         +91 90000 14701
@@ -74,6 +77,7 @@ const ContactSection = () => {
                                         href="https://wa.me/447442586325?text=Hi%20L2%20Global%2C%20I%20am%20interested%20in%20your%20services"
                                         target="_blank"
                                         rel="noopener noreferrer"
+                                        onClick={() => trackEvent('whatsapp_click', { location: 'contact_section' })}
                                         className='font-semibold text-lg text-[#25d366] hover:text-[#1aa34a] transition-colors'
                                     >
                                         +44 7442 586325
@@ -106,6 +110,7 @@ const ContactSection = () => {
                                     <p className='text-gray-500 text-sm'>Email</p>
                                     <Link
                                         href="mailto:contactus@l2global.in"
+                                        onClick={() => trackEvent('email_click', { location: 'contact_section' })}
                                         className='font-semibold text-lg text-gray-900 hover:text-[#1a56db] transition-colors'
                                     >
                                         contactus@l2global.in

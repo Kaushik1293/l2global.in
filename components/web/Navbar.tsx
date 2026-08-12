@@ -11,6 +11,7 @@ import { MoveRight, Dot, Menu, Phone, ChevronDown } from 'lucide-react'
 import { Menu as HeadlessMenu, Transition, Popover } from '@headlessui/react'
 import PrimaryButton from '../shared/PrimaryButton'
 import ContactPopup from '../shared/ContactPopup'
+import { trackEvent } from '@/lib/gtag'
 
 /* data */
 const industries = [
@@ -87,6 +88,7 @@ const Navbar = () => {
               <div className="flex items-center gap-6">
                 <a
                   href="tel:+447442586325"
+                  onClick={() => trackEvent('phone_click', { number: '+447442586325', location: 'navbar' })}
                   className="flex items-center gap-2 text-gray-700 tracking-[-0.5px] transition-colors hover:text-[#F15A23]"
                 >
                   <Phone size={14} className="text-[#F15A23]" />
@@ -94,6 +96,7 @@ const Navbar = () => {
                 </a>
                 <a
                   href="tel:+919000014701"
+                  onClick={() => trackEvent('phone_click', { number: '+919000014701', location: 'navbar' })}
                   className="flex items-center gap-2 text-gray-700 tracking-[-0.5px] transition-colors hover:text-[#F15A23]"
                 >
                   <Phone size={14} className="text-[#F15A23]" />

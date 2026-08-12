@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/gtag";
 
 // const COUNTRIES = [
 //   { name: "India", phoneCode: "91", flag: "https://flagcdn.com/in.svg", maxLength: 10 },
@@ -152,6 +153,8 @@ export default function ContactForm() {
       if (!res.ok || !result.success) {
         throw new Error(result.error || "Submission failed");
       }
+
+      trackEvent("contact_form_submit", { service: form.service });
 
       setForm({
         last_name: "",

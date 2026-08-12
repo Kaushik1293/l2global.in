@@ -6,6 +6,7 @@ import Divider from "./Divider";
 import SectionHeader from "./SectionHeader";
 import { useEffect, useRef, useState } from "react";
 import PrimaryButton from "../shared/PrimaryButton";
+import { trackEvent } from "@/lib/gtag";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -262,6 +263,7 @@ export default function AboutSection({
                                     <p className="text-gray-600 text-sm">{contactLabel}</p>
                                     <Link
                                         href={`tel:${contactNumber}`}
+                                        onClick={() => trackEvent('phone_click', { number: contactNumber, location: 'about_section' })}
                                         className="font-semibold text-[#030714] text-xl hover:text-[#F15A23] transition"
                                     >
                                         {contactNumber}

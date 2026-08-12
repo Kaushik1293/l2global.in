@@ -1,6 +1,8 @@
+'use client'
 
 import HeroSection from '@/components/web/HeroSection'
 import React from 'react'
+import { trackEvent } from '@/lib/gtag'
 import heroImage from '@/public/assets/web/contact-us/hero-img.png'
 import Divider from '@/components/web/Divider'
 import SectionHeader from '@/components/web/SectionHeader'
@@ -90,7 +92,11 @@ const ContactUsContainer = () => {
                                 <Image src={callimg} alt="call icon" width={50} height={50} />
                                 <div>
                                     <p className="text-gray-500">Call us:</p>
-                                    <Link href="tel:+919000014701" className="font-semibold text-lg text-gray-900">
+                                    <Link
+                                        href="tel:+919000014701"
+                                        onClick={() => trackEvent('phone_click', { number: '+919000014701', location: 'contact_us_page' })}
+                                        className="font-semibold text-lg text-gray-900"
+                                    >
                                         +91 90000 14701
                                     </Link>
                                 </div>
