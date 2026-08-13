@@ -28,6 +28,8 @@ const footerLinks = {
         { label: "Contact us", href: "/contact-us" },
         { label: "Careers", href: "/career" },
         { label: "Team", href: "/team" },
+        { label: "Blog", href: "/blog" },
+        { label: "FAQ", href: "/faq" },
     ],
 
     Services: [
