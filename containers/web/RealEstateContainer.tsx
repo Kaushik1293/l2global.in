@@ -16,6 +16,26 @@ import img3 from '@/public/assets/web/services/step3-img.svg'
 import img4 from '@/public/assets/web/services/step4-img.svg'
 import img5 from '@/public/assets/web/services/step5-img.svg'
 import HeroCTA from '@/components/web/HeroCTA'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
+
+const realEstateFaqs = [
+    {
+        q: 'Do you build Salesforce solutions for real estate businesses near me?',
+        a: 'Yes. L2 Global delivers real estate technology and Salesforce solutions across the UK, USA and Gulf (Dubai, Riyadh). Free consultation at l2global.in/contact-us.'
+    },
+    {
+        q: 'What real estate technology services does L2 Global offer?',
+        a: 'Property management systems, customer portals, real-time dashboards and AI-driven analytics built on Salesforce for developers, agencies and investors.'
+    },
+    {
+        q: 'How much does a real estate CRM implementation cost?',
+        a: 'Costs vary by scope and property portfolio size. Free scoping consultation available to provide an accurate estimate for your business.'
+    },
+    {
+        q: 'Can you integrate our existing property management tools with Salesforce?',
+        a: 'Yes. We specialise in integrating property management, listing and CRM systems into a single Salesforce-based platform.'
+    },
+]
 
 
 const steps: StepItem[] = [
@@ -74,7 +94,7 @@ const RealEstateContainer = () => {
         <HeroSection
           label="Real Estate"
           title="Innovating Real Estate Solutions"
-          description="L2 Global Technology Ltd. develops advanced education software that empowers learning, enhances efficiency, and meets global standards."
+          description="L2 Global Technology Ltd. develops advanced real estate software that streamlines property management, enhances transparency, and meets global standards."
           image={heroImage}
         />
       </div>
@@ -82,8 +102,8 @@ const RealEstateContainer = () => {
       {/* Sub Hero */}
       <div data-aos="fade-up" >
         <ServiceSubHero
-          label="Education Software Development Services"
-          title="Smart Education Solutions Built for the Future"
+          label="Real Estate Software Development Services"
+          title="Smart Real Estate Solutions Built for the Future"
           description={
             <>
               We create intelligent tools that redefine how the real estate industry operates.From property management systems to customer portals, our solutions improve efficiency and transparency. L2 Global combines innovation and technology to help realtors, builders, and investors make data-driven decisions and manage operations seamlessly.
@@ -105,10 +125,10 @@ const RealEstateContainer = () => {
             description={
               <>
                 <p>
-                  Every project reflects our passion for innovation and excellence, delivering measurable success in digital education through engaging, outcome-driven solutions
+                  Every project reflects our passion for innovation and excellence, delivering measurable success in real estate technology through engaging, outcome-driven solutions
                 </p>
                 <p>
-                  Through thoughtful design and modern technology, we help institutions adapt and thrive—turning ideas into meaningful learning experiences.
+                  Through thoughtful design and modern technology, we help developers and agencies adapt and thrive—turning ideas into seamless property experiences.
                 </p>
               </>
             }
@@ -166,31 +186,33 @@ const RealEstateContainer = () => {
           <Divider className="text-black" blur={true} pillClassName='bg-[#F6F6F9]' label={'Our Developers'} />
         </div>
         <div className='mt-1'>
-          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality education software solutions.' />
+          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality real estate software solutions.' />
         </div>
         <DeveloperCard
           paragraphs={[
-            "Our development team combines deep technical expertise with a strong understanding of modern education platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving learning needs, ensuring long-term value for institutions and learners alike.",
-            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms the education landscape. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
-            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify learning and management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in education technology."
+            "Our development team combines deep technical expertise with a strong understanding of modern property management platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving market needs, ensuring long-term value for developers, agencies and investors alike.",
+            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms how the real estate industry operates. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
+            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify property management and transactions. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in real estate technology."
           ]}
           buttonLabel="Get A Quote"
           phoneLabel="Take a Call"
-          phoneNumber="+91 97403 39495"
+          phoneNumber="+91 90000 14701"
           image={developerImg.src}
           badgeText={`Expert\nDeveloper\nTeam`}
         />
       </div>
+
+      <ServiceFAQ faqs={realEstateFaqs} serviceName='Real Estate Technology' />
 
       <div data-aos="fade-up">
         <HeroCTA
           tag="Let's Grow Together"
           heading="Expand Your Business with Us!"
           description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-          primaryBtnText="Get Started"
-          primaryBtnLink="/get-started"
-          secondaryBtnText="Watch Demo"
-          secondaryBtnLink="/demo"
+          primaryBtnText="Book Free Consultation"
+          primaryBtnLink="/contact-us"
+          secondaryBtnText="View Services"
+          secondaryBtnLink="/services"
         />
 
       </div>

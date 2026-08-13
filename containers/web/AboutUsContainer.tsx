@@ -202,7 +202,7 @@ const AboutUsContainer = () => {
                         {[
                             { term: "Company name", def: "L2 Global Technologies" },
                             { term: "Type", def: "IT Integration Consultancy" },
-                            { term: "Founded", def: "2020" },
+                            { term: "Founded", def: "2014" },
                             { term: "HQ", def: "London, United Kingdom" },
                             { term: "Also serving", def: "UAE, Saudi Arabia, Qatar, USA, India" },
                             { term: "Specialisations", def: "Salesforce, SAP, MuleSoft, AWS, Oracle, API" },
@@ -226,7 +226,7 @@ const AboutUsContainer = () => {
                         {[
                             { term: 'Company name', def: 'L2 Global Technologies' },
                             { term: 'Type', def: 'IT Integration Consultancy' },
-                            { term: 'Founded', def: '2020' },
+                            { term: 'Founded', def: '2014' },
                             { term: 'HQ', def: 'London, United Kingdom' },
                             { term: 'Also serving', def: 'UAE, Saudi Arabia, Qatar, USA, India' },
                             { term: 'Specialisations', def: 'Salesforce, SAP, MuleSoft, AWS, Oracle, API' },
@@ -249,10 +249,10 @@ const AboutUsContainer = () => {
                     tag="Let's Grow Together"
                     heading="Expand Your Business with Us!"
                     description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Get Started"
+                    primaryBtnText="Book Free Consultation"
                     primaryBtnLink="/contact-us"
-                    secondaryBtnText="Watch Demo"
-                    secondaryBtnLink="/demo"
+                    secondaryBtnText="View Services"
+                    secondaryBtnLink="/services"
                 />
 
             </div>

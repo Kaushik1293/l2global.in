@@ -29,14 +29,14 @@ interface TeamMember {
 const teamMembers: TeamMember[] = [
     {
         name: (
-            <div >
+            <span>
                 Lenin <br /> Gongati
-            </div>
+            </span>
         ),
         role: (
-            <div>
+            <span>
                 {/* UI/UX <br /> Designer */}
-            </div>
+            </span>
         ),
         image: img2.src,
         bg: 'bg-[#A8B7CC]',
@@ -46,14 +46,14 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: (
-            <div>
+            <span>
                 Teja<br /> Rani
-            </div>
+            </span>
         ),
         role: (
-            <div>
+            <span>
 
-            </div>
+            </span>
         ),
         image: img1.src,
         bg: 'bg-[#B7AEA2]',
@@ -63,14 +63,14 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: (
-            <div>
+            <span>
                 Anitha
-            </div>
+            </span>
         ),
         role: (
-            <div>
+            <span>
                 {/* Product <br /> Designer */}
-            </div>
+            </span>
         ),
         image: img3.src,
         bg: 'bg-[#F6B3C8]',
@@ -80,14 +80,14 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: (
-            <div>
+            <span>
                 Vijay <br /> Krishna
-            </div>
+            </span>
         ),
         role: (
-            <div>
+            <span>
                 {/* UI/UX <br /> Designer */}
-            </div>
+            </span>
         ),
         image: Vijay.src,
         bg: 'bg-[#C3A0B9]',
@@ -97,14 +97,14 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: (
-            <div>
-                Rajesh <br />  
-            </div>
+            <span>
+                Rajesh <br />
+            </span>
         ),
         role: (
-            <div>
+            <span>
                 {/* Full Stack <br /> Developer */}
-            </div>
+            </span>
         ),
         image: img5.src,
         bg: 'bg-[#F2A76F]',
@@ -114,14 +114,14 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: (
-            <div>
+            <span>
                 Satish <br /> Kumar
-            </div>
+            </span>
         ),
         role: (
-            <div>
+            <span>
                 {/* MERN Stack <br /> Developer */}
-            </div>
+            </span>
         ),
         image: satish.src,
         bg: 'bg-[#95B4F6]',
@@ -131,14 +131,14 @@ const teamMembers: TeamMember[] = [
     },
     {
         name: (
-            <div>
+            <span>
                 Venkat
-            </div>
+            </span>
         ),
         role: (
-            <div>
+            <span>
                 {/* MERN Stack <br /> Developer */}
-            </div>
+            </span>
         ),
         image: Venkat.src,
         bg: 'bg-[#FF8989]',
@@ -214,8 +214,8 @@ export default function TeamSection() {
                                                 y2="72"
                                                 gradientUnits="userSpaceOnUse"
                                             >
-                                                <stop stop-color="#1F2937" />
-                                                <stop offset="1" stop-color="#030712" />
+                                                <stop stopColor="#1F2937" />
+                                                <stop offset="1" stopColor="#030712" />
                                             </linearGradient>
                                         </defs>
                                     </svg>

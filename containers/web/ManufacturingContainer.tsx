@@ -16,6 +16,26 @@ import img3 from '@/public/assets/web/services/step3-img.svg'
 import img4 from '@/public/assets/web/services/step4-img.svg'
 import img5 from '@/public/assets/web/services/step5-img.svg'
 import HeroCTA from '@/components/web/HeroCTA'
+import ServiceFAQ from '@/components/web/services/ServiceFAQ'
+
+const manufacturingFaqs = [
+    {
+        q: 'Do you deliver manufacturing IT solutions near me?',
+        a: 'Yes. L2 Global delivers manufacturing IT solutions across the UK, USA, Saudi Arabia and UAE. Free consultation at l2global.in/contact-us.'
+    },
+    {
+        q: 'What manufacturing technology services does L2 Global offer?',
+        a: 'SAP S/4HANA migration, MuleSoft integration and digital transformation for discrete and process manufacturers.'
+    },
+    {
+        q: 'Can you integrate our shop-floor systems with SAP?',
+        a: 'Yes. We specialise in integrating manufacturing execution systems and shop-floor data with SAP and other enterprise platforms.'
+    },
+    {
+        q: 'How much does a manufacturing SAP implementation cost?',
+        a: 'Costs vary by plant complexity and integration scope. Free scoping consultation available.'
+    },
+]
 
 
 const steps: StepItem[] = [
@@ -105,10 +125,10 @@ const ManufacturingContainer = () => {
             description={
               <>
                 <p>
-                  Every project reflects our passion for innovation and excellence, delivering measurable success in digital education through engaging, outcome-driven solutions
+                  Every project reflects our passion for innovation and excellence, delivering measurable success in digital manufacturing through engaging, outcome-driven solutions
                 </p>
                 <p>
-                  Through thoughtful design and modern technology, we help institutions adapt and thrive—turning ideas into meaningful learning experiences.
+                  Through thoughtful design and modern technology, we help manufacturers adapt and thrive—turning ideas into measurable operational gains.
                 </p>
               </>
             }
@@ -166,17 +186,17 @@ const ManufacturingContainer = () => {
           <Divider className="text-black" blur={true} pillClassName='bg-[#F6F6F9]' label={'Our Developers'} />
         </div>
         <div className='mt-1'>
-          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality education software solutions.' />
+          <SectionHeader title='The Talent Powering Every Success' desc='Behind every project is a passionate team of experts dedicated to turning ideas into impactful, high-quality manufacturing software solutions.' />
         </div>
         <DeveloperCard
           paragraphs={[
-            "Our development team combines deep technical expertise with a strong understanding of modern education platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving learning needs, ensuring long-term value for institutions and learners alike.",
-            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms the education landscape. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
-            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify learning and management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in education technology."
+            "Our development team combines deep technical expertise with a strong understanding of modern manufacturing platforms to build reliable, future-ready digital solutions. We focus on creating systems that are intuitive, secure, and adaptable to evolving production needs, ensuring long-term value for manufacturers and their supply chains alike.",
+            "Our developers are the driving force behind every innovative solution we create. With a perfect blend of creativity, technical expertise, and attention to detail, they design and build software that transforms shop-floor operations. Focused on quality, scalability, and performance, our team ensures each project delivers seamless user experiences and measurable results that align with your vision.",
+            "At L2 Global, our developers bring vision to life through code, creativity, and collaboration. They focus on crafting intelligent, efficient systems that simplify production and supply chain management. Every project reflects their dedication to innovation, precision, and the pursuit of excellence in manufacturing technology."
           ]}
           buttonLabel="Get A Quote"
           phoneLabel="Take a Call"
-          phoneNumber="+91 97403 39495"
+          phoneNumber="+91 90000 14701"
           image={developerImg.src}
           badgeText={`Expert\nDeveloper\nTeam`}
         />
@@ -187,13 +207,15 @@ const ManufacturingContainer = () => {
           tag="Let's Grow Together"
           heading="Expand Your Business with Us!"
           description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-          primaryBtnText="Get Started"
-          primaryBtnLink="/get-started"
-          secondaryBtnText="Watch Demo"
-          secondaryBtnLink="/demo"
+          primaryBtnText="Book Free Consultation"
+          primaryBtnLink="/contact-us"
+          secondaryBtnText="View Services"
+          secondaryBtnLink="/services"
         />
 
       </div>
+
+      <ServiceFAQ faqs={manufacturingFaqs} serviceName='Manufacturing Technology' />
 
     </div>
   )

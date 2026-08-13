@@ -58,13 +58,13 @@ const ServiceProcessSteps = () => {
                     </div>
                 </div>
 
-                <h1
+                <h2
                     className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-semibold text-[#0D1526] leading-tight px-4 tracking-[-1px] md:tracking-[-2px] lg:tracking-[-3px]"
                     data-aos="fade-up"
                     data-aos-delay="100"
                 >
                     How We <span className={styles.gradientText}>Deliver Excellence</span>
-                </h1>
+                </h2>
 
                 <p
                     className="text-sm sm:text-base md:text-lg text-[#707A8F] text-center mt-3 px-4 leading-relaxed tracking-[-0.3px] sm:tracking-[-0.5px]"

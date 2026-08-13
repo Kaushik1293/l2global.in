@@ -249,11 +249,10 @@ import React from 'react'
 //     description: '',
 // };
 export const metadata: Metadata = {
-    title: 'Salesforce, SAP & MuleSoft Consultants | UK, USA & Gulf | L2 Global',
+    title: 'Salesforce, SAP & MuleSoft Experts',
     description:
-        'L2 Global Technologies — expert Salesforce, SAP, MuleSoft and cloud integration' +
-        ' consultants serving UK, USA, UAE, Saudi Arabia and Gulf businesses.' +
-        ' 182+ projects delivered. Free consultation today.',
+        'Expert Salesforce, SAP, MuleSoft and cloud integration consultants serving UK, USA,' +
+        ' UAE, Saudi Arabia and Gulf businesses. Free consultation today.',
     alternates: { canonical: 'https://l2global.in' },
     openGraph: {
         title: 'Salesforce, SAP & MuleSoft Consultants | L2 Global Technologies',

@@ -30,12 +30,12 @@ const ServiceKPISection: React.FC<IProps> = ({ stats }) => {
                 </div>
             </div>
 
-            <h1
+            <h2
                 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-center font-semibold text-[#0D1526] px-4 leading-tight tracking-[-1px] md:tracking-[-2px] lg:tracking-[-3px]"
                 data-aos="fade-up"
             >
                 Results That <span className={styles.gradientText}>Speak Louder</span>
-            </h1>
+            </h2>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-5 mt-14">
                 {stats.map((item, index) => (

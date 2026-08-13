@@ -3,11 +3,10 @@ import SalesForceContainer from '@/containers/services/SalesForceContainer';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
-    title: 'Salesforce Implementation & Consulting | UK, USA & Gulf | L2 Global',
+    title: 'Salesforce Implementation & Consulting',
     description:
         'Expert Salesforce implementation consultants serving UK (London, Manchester),' +
-        ' USA (New York, Texas) and Gulf (Dubai, Riyadh, Abu Dhabi).' +
-        ' 180+ Salesforce deployments. Free consultation.',
+        ' USA (New York, Texas) and Gulf (Dubai, Riyadh). 180+ deployments.',
     alternates: { canonical: 'https://l2global.in/services/salesforce-services' },
     openGraph: {
         title: 'Salesforce Implementation & Consulting | L2 Global Technologies',

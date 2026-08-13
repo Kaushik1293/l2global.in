@@ -2,7 +2,6 @@
 
 import dynamic from "next/dynamic";
 import Image from "next/image";
-import { Smile, Star } from "lucide-react";
 import { useRef, useState } from "react";
 
 import PrimaryButton from "../shared/PrimaryButton";
@@ -15,7 +14,6 @@ import img4 from "../../public/assets/web/home/all-ind-img.png";
 import img5 from "../../public/assets/web/home/trust-img.png";
 import img6 from "../../public/assets/web/home/build-img.png";
 import Typewriter from "typewriter-effect";
-import truspilot from '../../public/assets/web/home/trustpilot.svg';
 import Slider, { Settings } from "react-slick";
 import excellance from '../../public/assets/web/home/excellence.svg';
 import ContactPopup from "../shared/ContactPopup";
@@ -28,6 +26,7 @@ const heroSlides = [
         title: { line1: "Generate More", line2: "ROI With Us" },
         desc: "Drive measurable business growth with intelligent digital solutions designed to maximize efficiency and returns, designed for UK, USA and Gulf businesses.",
         img: img1,
+        alt: "Generate more ROI with L2 Global digital solutions",
     },
     {
         id: 2,
@@ -35,6 +34,7 @@ const heroSlides = [
         title: { line1: "Connect Salesforce", line2: "With MuleSoft" },
         desc: "Unify data, automate workflows, and enable seamless enterprise integration using Salesforce and MuleSoft.Trusted by businesses from London to Dubai.",
         img: img2,
+        alt: "Connect Salesforce with MuleSoft integration",
     },
     {
         id: 3,
@@ -42,6 +42,7 @@ const heroSlides = [
         title: { line1: "Transform Business", line2: "With SAP" },
         desc: "Optimize core processes, improve visibility, and scale operations efficiently with our SAP expertise, serving clients from London to Dubai to New York",
         img: img3,
+        alt: "Transform your business with SAP expertise",
     },
     {
         id: 4,
@@ -49,6 +50,7 @@ const heroSlides = [
         title: { line1: "Solutions Across", line2: "Industries" },
         desc: "Delivering tailored digital solutions for healthcare, education, finance, manufacturing, and more across three continents.",
         img: img4,
+        alt: "Tailored digital solutions across industries",
     },
     {
         id: 5,
@@ -56,6 +58,7 @@ const heroSlides = [
         title: { line1: "Driven By", line2: "Innovation & Trust" },
         desc: "A technology partner focused on building scalable, secure, and future-ready digital solutions for global enterprises.",
         img: img5,
+        alt: "Innovation and trust driving digital transformation",
     },
     {
         id: 6,
@@ -63,6 +66,7 @@ const heroSlides = [
         title: { line1: "Let’s Build", line2: "Something Great" },
         desc: "Connect with our experts to discuss your requirements and start your digital transformation journey wherever you are — UK, USA or Gulf.",
         img: img6,
+        alt: "Build something great with L2 Global experts",
     },
 ];
 
@@ -122,6 +126,9 @@ export default function HeroCarousel() {
                 style={{ backgroundImage: "url('/assets/web/home/bg-hero.png')" }}
             >
                 <div className="container mx-auto px-6">
+                    <h1 className="sr-only">
+                        L2 Global Technologies — Salesforce Agentforce AI, SAP, MuleSoft &amp; Cloud Consultants for UK, USA and Gulf Businesses
+                    </h1>
                     <Slider ref={sliderRef} {...settings}>
                         {heroSlides.map((t) => (
                             <div key={t.id} className="px-2">
@@ -131,11 +138,12 @@ export default function HeroCarousel() {
                                     <div className="md:hidden flex justify-center relative">
                                         <Image
                                             src={t.img}
-                                            alt="Hero Image"
+                                            alt={t.alt}
                                             width={600}
                                             height={600}
                                             className="rounded-3xl object-cover"
-                                            priority
+                                            priority={t.id === 1}
+                                            loading={t.id === 1 ? "eager" : "lazy"}
                                         />
                                         <RotatingBadge />
 
@@ -144,7 +152,7 @@ export default function HeroCarousel() {
                                     {/* CONTENT */}
                                     <div className="space-y-3 md:space-y-8 relative">
                                         {/* TITLE */}
-                                        <h1
+                                        <h2
                                             className="text-[40px] md:text-[65px] leading-tight text-center md:text-left tracking-tighter md:tracking-[-3px] h-40"
                                             style={{
                                                 background: "linear-gradient(2.84deg, rgba(20,20,20,0.7) 0.04%, #131313 36.04%)",
@@ -183,7 +191,7 @@ export default function HeroCarousel() {
                                                     {t.title.line2}
                                                 </>
                                             )}
-                                        </h1>
+                                        </h2>
 
                                         {/* DESCRIPTION */}
                                         <p className="text-sm md:text-xl text-[#494852] text-center md:text-left">
@@ -192,37 +200,26 @@ export default function HeroCarousel() {
 
                                         {/* BUTTONS */}
                                         <div className="flex flex-wrap justify-center md:justify-start gap-4">
-                                            <PrimaryButton onClick={() => setIsContactOpen(true)} label='Get Started' icon={
+                                            <PrimaryButton onClick={() => setIsContactOpen(true)} label='Book a Free Call' icon={
                                                 <svg width="18" height="14" viewBox="0 0 18 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M11.25 14L9.64687 12.3667L13.6969 8.16667H0V5.83333H13.6969L9.675 1.63333L11.25 0L18 7L11.25 14Z" fill="white" />
                                                 </svg>
                                             } />
-                                            <OutlineButton name="Watch Demo" />
+                                            {/* Watch Demo button removed — no demo video exists */}
                                         </div>
 
-                                        {/* RATING */}
-                                        <div className="flex justify-center md:justify-start items-center gap-4">
-                                            <div className="bg-[#F5AF191A] rounded-full p-3">
-                                                <Star size={24} fill="#F5AF19" stroke="#F5AF19" />
-                                            </div>
-                                            <div>
-                                                <p className="text-xl font-semibold">5.0 Rated</p>
-                                                <p className="text-gray-600 text-sm">Rated superb over 4.5k ratings</p>
-                                            </div>
-                                        </div>
-
-                                        <img src={truspilot.src} className="my-5" />
                                     </div>
 
                                     {/* IMAGE (DESKTOP) */}
                                     <div className="hidden md:flex justify-center relative">
                                         <Image
                                             src={t.img}
-                                            alt="Hero Image"
+                                            alt={t.alt}
                                             width={600}
                                             height={600}
                                             className="rounded-3xl object-cover"
-                                            priority
+                                            priority={t.id === 1}
+                                            loading={t.id === 1 ? "eager" : "lazy"}
                                         />
                                         {/* Rotating Badge Overlay */}
                                         <RotatingBadge />

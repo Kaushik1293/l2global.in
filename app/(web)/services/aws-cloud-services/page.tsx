@@ -3,11 +3,10 @@ import AwsContainer from '@/containers/services/AwsContainer'
 import React from 'react'
 
 export const metadata = {
-  title: 'AWS Cloud Services Near Me | UK, USA & UAE | L2 Global Technologies',
+  title: 'AWS Cloud Migration & DevOps',
   description:
-    'Certified AWS cloud consultants near you. Migration, architecture, DevOps.' +
-    ' Serving London, Manchester, New York, Texas, Dubai, Abu Dhabi, Riyadh.' +
-    ' Free cloud readiness assessment.',
+    'Certified AWS cloud consultants — migration, architecture and DevOps.' +
+    ' Serving London, Manchester, New York, Texas, Dubai and Riyadh.',
   alternates: { canonical: 'https://l2global.in/services/aws-cloud-services' },
   openGraph: {
     title: 'AWS Cloud Services | L2 Global Technologies',

@@ -8,11 +8,17 @@ import React from 'react'
 // };
 
 export const metadata: Metadata = {
-    title: 'Contact L2 Global Technologies | Free IT Consultation — UK, USA & UAE',
+    title: 'Contact Us | Free Consultation',
     description:
-        'Book a free consultation with L2 Global Technologies. Salesforce, SAP, MuleSoft and cloud' +
-        ' experts serving London, New York, Dubai and across the UK, USA and Gulf region.',
+        'Book a free consultation. Salesforce, SAP, MuleSoft and cloud experts serving' +
+        ' London, New York, Dubai and across the UK, USA and Gulf region.',
     alternates: { canonical: 'https://l2global.in/contact-us' },
+    openGraph: {
+        title: 'Contact Us | L2 Global Technologies',
+        description: 'Book a free consultation. Salesforce, SAP, MuleSoft and cloud experts serving UK, USA and Gulf.',
+        url: 'https://l2global.in/contact-us',
+        images: ['/assets/web/og-image.png'],
+    },
 };
 
 

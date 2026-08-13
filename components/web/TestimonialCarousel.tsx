@@ -80,21 +80,10 @@ export default function TestimonialCarousel() {
     autoplay: true,
     autoplaySpeed: 2500,
     speed: 800,
-    slidesToShow: 3,
-    centerMode: true,
+    slidesToShow: isMobile ? 1 : 3,
+    centerMode: !isMobile,
     centerPadding: "0px",
     beforeChange: (_: any, next: number) => setCurrent(next),
-
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 1,
-          centerMode: false,
-          centerPadding: "0px",
-        },
-      },
-    ],
   };
 
   return (
@@ -114,7 +103,7 @@ export default function TestimonialCarousel() {
       </div>
 
       <div className="overflow-hidden">
-        <Slider ref={sliderRef} {...settings}>
+        <Slider key={isMobile ? "mobile" : "desktop"} ref={sliderRef} {...settings}>
           {testimonials.map((t, i) => {
             const isCenter = isMobile
               ? true

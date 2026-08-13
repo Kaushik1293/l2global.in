@@ -167,12 +167,12 @@ const AwsContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Get Started"
-                    primaryBtnLink="/get-started"
-                    secondaryBtnText="Watch Demo"
-                    secondaryBtnLink="/demo"
+                    heading="Ready to Move to the Cloud?"
+                    description="Partner with L2 Global for AWS migration, architecture and DevOps that keeps your infrastructure secure, scalable and cost-efficient."
+                    primaryBtnText="Book an AWS Consultation"
+                    primaryBtnLink="/contact-us"
+                    secondaryBtnText="View Services"
+                    secondaryBtnLink="/services"
                 />
 
             </div>

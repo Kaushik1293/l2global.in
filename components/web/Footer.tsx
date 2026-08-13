@@ -6,9 +6,6 @@ import Image from "next/image";
 import React from "react";
 import { ArrowUp, Heart } from "lucide-react";
 import logo from '@/public/assets/web/home/footer-logo.png'
-import truspilot from '../../public/assets/web/home/trustpilot.svg';
-import googleRating from '../../public/assets/web/home/google-reviews.svg';
-import { Content } from "next/font/google";
 
 
 const year = new Date().getFullYear();
@@ -33,18 +30,22 @@ const footerLinks = {
     ],
 
     Services: [
-        { label: 'SAP & Salesforce', href: '/services/sap-link-by-salesforce' },
+        { label: 'Salesforce Agentforce AI', href: '/services/agentforce-ai' },
+        { label: 'SAP Joule AI', href: '/services/sap-ai' },
+        { label: 'SAP S/4HANA & RISE with SAP', href: '/services/sap' },
+        { label: 'SAP & Salesforce Integration', href: '/services/sap-link-by-salesforce' },
         { label: 'MuleSoft Integration', href: '/services/mulesoft' },
-        { label: 'CRM Consulting', href: '/services/crm-consulting' },
+        { label: 'Salesforce CRM Consulting', href: '/services/crm-consulting' },
+        { label: 'Data Science & AI/ML', href: '/services/data-science' },
+        { label: 'Website Development', href: '/services/web-development' },
         { label: 'API Integration', href: '/services/api-integration' },
         { label: 'AWS Cloud', href: '/services/aws-cloud-services' },
-        { label: 'Oracle Managed', href: '/services/oracle-managed-services' },
     ],
 
 
     Industries: [
         { label: "Education", href: "/industries/education" },
-        { label: "Healthcare", href: "/industries/healthcare" },
+        { label: "Healthcare", href: "/industries/health-care" },
         { label: "Real Estate", href: "/industries/real-estate" },
         { label: "Manufacturing", href: "/industries/manufacturing" },
         { label: "Non Profit Organizations", href: "/industries/non-profit" },
@@ -79,8 +80,9 @@ const Footer: React.FC = () => {
                         </div>
 
                         <p className="mt-6 max-w-md leading-7 text-[#6F6C90]">
-                            Certified Salesforce, SAP, MuleSoft and cloud integration consultants serving businesses across the UK, USA, Gulf and India.
-                            182+ projects delivered. Free consultation available.
+                            UK-headquartered Salesforce Agentforce AI, SAP Gold Partner, MuleSoft,
+                            data science and website development consultants. UK · Texas USA · UAE · India.
+                            182+ projects. Founded 2014. Free consultation.
                         </p>
 
                         {/* Social icons */}
@@ -118,12 +120,6 @@ const Footer: React.FC = () => {
                                 </svg>
 
                             </Link>
-                        </div>
-
-                        {/* Rating */}
-                        <div>
-                            <img src={truspilot.src} className="my-5" />
-                            <img src={googleRating.src} />
                         </div>
                     </div>
 
@@ -190,7 +186,7 @@ const Footer: React.FC = () => {
                                 </Link>
                             </li>
                             <li>
-                                <Link href="/industries/healthcare"
+                                <Link href="/industries/health-care"
                                     className="hover:text-[#F15A23] text-[#6F6C90] transition-colors duration-500 tracking-[-0.5px]">
                                     Healthcare
                                 </Link>
@@ -254,10 +250,11 @@ const Footer: React.FC = () => {
 
                     {/* Bottom row */}
                     <div className="mt-8 flex flex-col gap-4 items-center justify-between text-[#6F6C90] md:flex-row">
-                        <div className="md:flex justify-start items-center">
-                            <p>Copyright {year} © L2 Global Technologies Ltd. · UK · USA · UAE · India</p>
-                            <div className="flex items-center gap-3">
-                                <p className="ml-2">All Rights Reserved</p>
+                        <div className="md:flex flex-col justify-start">
+                            <p className="text-sm">Copyright {year} © L2 Global Technologies Ltd. · Registered in England &amp; Wales</p>
+                            <p className="text-xs text-gray-400 mt-1">UK Office · Texas USA Office · India Delivery Centre · Dubai Office</p>
+                            <div className="flex items-center gap-3 mt-1">
+                                <p className="text-xs">All Rights Reserved</p>
                                 {/* <span className="text-slate-300">|</span>
                                 <Link href="#" className="text-orange-600 hover:underline transition-all duration-500">Terms and Conditions</Link>
                                 <span className="text-slate-300">|</span>

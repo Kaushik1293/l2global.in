@@ -1,15 +1,34 @@
+import { ServiceLocalSchema } from '@/components/shared/JsonLd';
 import RealEstateContainer from '@/containers/web/RealEstateContainer'
 import { Metadata } from 'next';
 import React from 'react'
 
 export const metadata: Metadata = {
-    title: 'Real Estate CRM Solutions | Salesforce for Property | UK & UAE | L2 Global',
-    description: 'L2 Global delivers real estate technology solutions—Salesforce for property management, real-time dashboards, and AI-driven analytics—to developers and agencies across the UK, UAE, and GCC.',
+    title: 'Real Estate CRM | UK & UAE',
+    description: 'Salesforce for property management, real-time dashboards and AI-driven analytics for developers and agencies across the UK, UAE and GCC.',
+    alternates: { canonical: 'https://l2global.in/industries/real-estate' },
+    openGraph: {
+        title: 'Real Estate CRM Solutions | L2 Global Technologies',
+        description: 'Salesforce for property management, real-time dashboards and AI-driven analytics for real estate.',
+        url: 'https://l2global.in/industries/real-estate',
+        images: ['/assets/web/og-image.png'],
+    },
 };
 
 const page = () => {
     return (
-        <div><RealEstateContainer /></div>
+        <div>
+            <RealEstateContainer />
+            <ServiceLocalSchema
+                serviceName='Real Estate CRM Solutions'
+                serviceUrl='https://l2global.in/industries/real-estate'
+                description='Salesforce for property management, real-time dashboards and AI-driven analytics for real estate.'
+                cities={[
+                    'London', 'Manchester', 'Birmingham', 'Edinburgh', 'Bristol',
+                    'Dubai', 'Abu Dhabi', 'Riyadh', 'Doha', 'Kuwait City',
+                ]}
+            />
+        </div>
     )
 }
 

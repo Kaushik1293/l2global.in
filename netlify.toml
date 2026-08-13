@@ -1,3 +1,12 @@
 [build]
   command = "npm run build"
   publish = "out"
+
+[functions]
+  directory = "netlify/functions"
+
+[[redirects]]
+  from = "/industries/healthcare"
+  to = "/industries/health-care"
+  status = 301
+  force = true

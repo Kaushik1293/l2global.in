@@ -1,5 +1,6 @@
 "use client";
 import React from 'react'
+import { trackEvent } from '../../../lib/gtag'
 import SectionHeader from '../SectionHeader'
 import mainImg from '../../../public/assets/web/contact-us/Social-Media/social-img.png'
 import whatsapp from '../../../public/assets/web/contact-us/Social-Media/whatsapp.svg'
@@ -26,7 +27,7 @@ const SocialMediaSection = () => {
                     <img src={mainImg.src} alt="social media" className="w-4/5 h-full" data-aos="zoom-out" />
 
                     {/* Social IMages */}
-                    <div className={`${iconBase} -top-6 md:left-24 left-14 hover:shadow-[0_0_35px_#25D366]`} data-aos="zoom-in" data-aos-delay="200" onClick={() => window.open('https://wa.me/+447442586325', '_blank')}>
+                    <div className={`${iconBase} -top-6 md:left-24 left-14 hover:shadow-[0_0_35px_#25D366]`} data-aos="zoom-in" data-aos-delay="200" onClick={() => { trackEvent('whatsapp_click', { location: 'social_media_section' }); window.open('https://wa.me/+447442586325', '_blank'); }}>
                         <img src={whatsapp.src} alt="whatsapp" />
                     </div>
 

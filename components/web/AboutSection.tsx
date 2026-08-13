@@ -6,6 +6,7 @@ import Divider from "./Divider";
 import SectionHeader from "./SectionHeader";
 import { useEffect, useRef, useState } from "react";
 import PrimaryButton from "../shared/PrimaryButton";
+import { trackEvent } from "@/lib/gtag";
 import Link from "next/link";
 import AOS from "aos";
 import "aos/dist/aos.css";
@@ -53,11 +54,16 @@ type AboutSectionProps = {
 // };
 
 const useCounter = (end: number, duration = 800) => {
-  const [count, setCount] = useState(0);
+  // Start at the real value, not 0 — this is a static export, so whatever renders
+  // here is what crawlers and no-JS visitors permanently see. Only reset to 0 once
+  // the scroll-into-view animation actually begins, so the count-up effect still
+  // plays for users while the initial/server-rendered HTML shows the true number.
+  const [count, setCount] = useState(end);
   const [hasStarted, setHasStarted] = useState(false);
- 
+
   useEffect(() => {
     if (!hasStarted) return;
+    setCount(0);
     let current = 0;
     const step = end / (duration / 16);
     const timer = setInterval(() => {
@@ -201,7 +207,7 @@ export default function AboutSection({
                     >
                         <img
                             src={imageSrc}
-                            alt="About Image"
+                            alt={title}
                             className="w-full h-full object-contain"
                         />
                     </div>
@@ -257,6 +263,7 @@ export default function AboutSection({
                                     <p className="text-gray-600 text-sm">{contactLabel}</p>
                                     <Link
                                         href={`tel:${contactNumber}`}
+                                        onClick={() => trackEvent('phone_click', { number: contactNumber, location: 'about_section' })}
                                         className="font-semibold text-[#030714] text-xl hover:text-[#F15A23] transition"
                                     >
                                         {contactNumber}

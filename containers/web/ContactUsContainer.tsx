@@ -1,6 +1,8 @@
+'use client'
 
 import HeroSection from '@/components/web/HeroSection'
 import React from 'react'
+import { trackEvent } from '@/lib/gtag'
 import heroImage from '@/public/assets/web/contact-us/hero-img.png'
 import Divider from '@/components/web/Divider'
 import SectionHeader from '@/components/web/SectionHeader'
@@ -8,7 +10,6 @@ import LocationCard from '@/components/web/LocationCard'
 import img1 from '@/public/assets/web/contact-us/vijayawada.png'
 import img2 from '@/public/assets/web/contact-us/bengaluru.png'
 import img3 from '@/public/assets/web/contact-us/london.png'
-import img4 from '@/public/assets/web/contact-us/texas.png'
 import img5 from '@/public/assets/web/contact-us/new-york.png'
 import img6 from '../../public/assets/web/contact-us/dubai.png'
 import HeroCTA from '@/components/web/HeroCTA'
@@ -22,6 +23,7 @@ import locationimg from '../../public/assets/web/contact-us/location-icon.svg';
 import emailimg from '../../public/assets/web/contact-us/email-Icon.svg';
 import Link from 'next/link'
 import SocialMediaSection from '@/components/web/contact-us/SocialMediaSection'
+import LazyCalendlyEmbed from '@/components/web/contact-us/LazyCalendlyEmbed'
 
 const locationDetails = [
     {
@@ -35,17 +37,12 @@ const locationDetails = [
         address: "Marathahalli,Bengaluru, Karnataka - 560037"
     },
     {
-        title: 'London',
+        title: 'UK Headquarters — Gloucester',
         image: img3,
         address: "Cheltenham Road, Gloucester,UK - GL2 0JR"
     },
-    // {
-    //     title: 'Texas',
-    //     image: img4,
-    //     address: "1-8, Tempalli, Gannavaram, Krishna District, Andhra Pradesh – 521286"
-    // },
     {
-        title: 'New York',
+        title: 'Texas, USA',
         image: img5,
         address: "3204, Spring, TX, USA - 77388"
     },
@@ -95,7 +92,11 @@ const ContactUsContainer = () => {
                                 <Image src={callimg} alt="call icon" width={50} height={50} />
                                 <div>
                                     <p className="text-gray-500">Call us:</p>
-                                    <Link href="tel:+919000014701" className="font-semibold text-lg text-gray-900">
+                                    <Link
+                                        href="tel:+919000014701"
+                                        onClick={() => trackEvent('phone_click', { number: '+919000014701', location: 'contact_us_page' })}
+                                        className="font-semibold text-lg text-gray-900"
+                                    >
                                         +91 90000 14701
                                     </Link>
                                 </div>
@@ -137,16 +138,7 @@ const ContactUsContainer = () => {
                             <div className='mt-16 text-center'>
                                 <h3 className='text-2xl font-medium mb-2'>Or book directly in our calendar</h3>
                                 <p className='text-[#6F6C90] mb-6'>Pick a time that suits you — UK and UAE hours</p>
-                                <div
-                                    className='calendly-inline-widget'
-                                    data-url='https://calendly.com/lenin040784/30-minute-it-discovery-call?primary_color=16b32b'
-                                    style={{ minWidth: '320px', height: '700px' }}
-                                />
-                                <script
-                                    type='text/javascript'
-                                    src='https://assets.calendly.com/assets/external/widget.js'
-                                    async
-                                />
+                                <LazyCalendlyEmbed />
                             </div>
 
                         </section>
@@ -226,7 +218,7 @@ const ContactUsContainer = () => {
                     primaryBtnText='Book Free Consultation'
                     primaryBtnLink='/contact-us'
                     secondaryBtnText='View Services'
-                    secondaryBtnLink='/services/sap-link-by-salesforce'
+                    secondaryBtnLink='/services'
 
                 />
 

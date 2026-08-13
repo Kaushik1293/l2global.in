@@ -181,12 +181,12 @@ const CrmContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Get Started"
-                    primaryBtnLink="/get-started"
-                    secondaryBtnText="Watch Demo"
-                    secondaryBtnLink="/demo"
+                    heading="Ready to Get More From Salesforce?"
+                    description="Partner with L2 Global for Salesforce CRM consulting, implementation and rescue projects that actually get adopted."
+                    primaryBtnText="Book a Salesforce CRM Consultation"
+                    primaryBtnLink="/contact-us"
+                    secondaryBtnText="View Services"
+                    secondaryBtnLink="/services"
                 />
 
             </div>

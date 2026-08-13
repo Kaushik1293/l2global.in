@@ -1,0 +1,38 @@
+<svg width="600" height="580" viewBox="0 0 600 580" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="agentHeroBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#195DF0"/>
+      <stop offset="100%" stop-color="#8152E0"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="20" y="40" width="560" height="500" rx="56" fill="url(#agentHeroBg)"/>
+
+  <circle cx="300" cy="290" r="150" fill="#ffffff" fill-opacity="0.14"/>
+  <circle cx="300" cy="290" r="115" fill="#ffffff"/>
+
+  <rect x="248" y="245" width="104" height="80" rx="20" fill="#195DF0"/>
+  <circle cx="278" cy="280" r="9" fill="#ffffff"/>
+  <circle cx="322" cy="280" r="9" fill="#ffffff"/>
+  <rect x="290" y="222" width="20" height="20" rx="10" fill="#195DF0"/>
+  <circle cx="300" cy="216" r="6" fill="#8152E0"/>
+  <path d="M270 330 q30 22 60 0" stroke="#8152E0" stroke-width="6" stroke-linecap="round" fill="none"/>
+
+  <g>
+    <rect x="52" y="90" width="180" height="56" rx="16" fill="#ffffff"/>
+    <circle cx="80" cy="118" r="12" fill="#195DF0"/>
+    <text x="102" y="123" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#0D1526">AI Agents</text>
+  </g>
+
+  <g>
+    <rect x="372" y="440" width="200" height="56" rx="16" fill="#ffffff"/>
+    <circle cx="400" cy="468" r="12" fill="#F49308"/>
+    <text x="422" y="473" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#0D1526">Autonomous CRM</text>
+  </g>
+
+  <g>
+    <rect x="30" y="430" width="220" height="56" rx="16" fill="#ffffff"/>
+    <circle cx="58" cy="458" r="12" fill="#2DB470"/>
+    <text x="80" y="463" font-family="Arial, sans-serif" font-size="16" font-weight="600" fill="#0D1526">24/7 Automation</text>
+  </g>
+</svg>

@@ -132,7 +132,7 @@ const HomeConatiner = () => {
                     title="Who We Are. Learn About Us"
                     subtitle="L2 Global Technologies is a specialist IT integration consultancy delivering Salesforce, SAP, MuleSoft and cloud solutions to businesses across the UK, USA, Gulf region and India."
                     imageSrc={aboutUsImage.src}
-                    buttonText="Read More"
+                    buttonText="Learn More About L2 Global"
                     contactLabel="Take a Quote"
                     contactNumber="+44 7442 586325"
                     stats={[
@@ -191,12 +191,12 @@ const HomeConatiner = () => {
                 /> */}
                 <HeroCTA
                     tag='UK · USA · UAE · India'
-                    heading='Serving Businesses Across Three Continents'
-                    description='From London to Dubai to New York — L2 Global Technologies delivers expert Salesforce, SAP and MuleSoft solutions wherever you are.'
+                    heading='Serving Businesses Across the UK, USA, UAE & India'
+                    description='From London to Dubai to Texas — L2 Global Technologies delivers expert Salesforce, SAP and MuleSoft solutions wherever you are.'
                     primaryBtnText='Book Free Consultation'
                     primaryBtnLink='/contact-us'
                     secondaryBtnText='View Our Services'
-                    secondaryBtnLink='/services/sap-link-by-salesforce'
+                    secondaryBtnLink='/services'
                 />
 
 

@@ -46,7 +46,7 @@ const ServiceSubHero: FC<IProps> = ({
                 >
                     <img
                         src={image}
-                        alt=""
+                        alt={title}
                         className="object-contain w-full h-auto max-w-md lg:max-w-full"
                     />
                 </div>
@@ -76,13 +76,13 @@ const ServiceSubHero: FC<IProps> = ({
                     </div>
 
                     {/* Title */}
-                    <h1
+                    <h2
                         className="text-xl sm:text-2xl md:text-3xl lg:text-5xl font-medium text-black leading-snug tracking-[-0.5px] md:tracking-[-1.5px]"
                         data-aos="zoom-in"
                         data-aos-delay="250"
                     >
                         {title}
-                    </h1>
+                    </h2>
 
                     {/* Description */}
                     <div

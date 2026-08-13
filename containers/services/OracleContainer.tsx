@@ -181,12 +181,12 @@ const OracleContainer = () => {
             <div className=' pt-2 md:pt-8 lg:pt-12'>
                 <HeroCTA
                     tag="Let's Grow Together"
-                    heading="Expand Your Business with Us!"
-                    description="Partner with L2 Global Technology Ltd. to accelerate growth through innovative design, technology, and digital strategy."
-                    primaryBtnText="Get Started"
-                    primaryBtnLink="/get-started"
-                    secondaryBtnText="Watch Demo"
-                    secondaryBtnLink="/demo"
+                    heading="Ready for Reliable Oracle Support?"
+                    description="Partner with L2 Global for 24/7 Oracle DBA and Oracle Cloud Infrastructure support that keeps your systems running."
+                    primaryBtnText="Book an Oracle Consultation"
+                    primaryBtnLink="/contact-us"
+                    secondaryBtnText="View Services"
+                    secondaryBtnLink="/services"
                 />
 
             </div>

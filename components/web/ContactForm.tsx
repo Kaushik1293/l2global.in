@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
+import { trackEvent } from "@/lib/gtag";
 
 // const COUNTRIES = [
 //   { name: "India", phoneCode: "91", flag: "https://flagcdn.com/in.svg", maxLength: 10 },
@@ -34,10 +35,10 @@ const COUNTRIES = [
 export default function ContactForm() {
   const [open, setOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const iframeRef = useRef<HTMLIFrameElement | null>(null);
   const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[0]);
   // const [selectedCountry, setSelectedCountry] = useState(COUNTRIES[3]);
-  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState<string | null>(null);
 
   const [form, setForm] = useState({
     last_name: "",
@@ -91,24 +92,23 @@ export default function ContactForm() {
   const validate = (values = form) => {
     const errs: Record<string, string> = {};
 
+    // REQUIRED: Name
     if (!values.last_name.trim() || values.last_name.length < 2)
-      errs.last_name = "Name must be at least 2 characters";
+      errs.last_name = "Please enter your name";
 
+    // REQUIRED: Email
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(values.email))
-      errs.email = "Enter a valid email";
+      errs.email = "Please enter a valid work email";
 
-    if (!values.mobile || values.mobile.length !== selectedCountry.maxLength)
-      errs.mobile = `Phone must be ${selectedCountry.maxLength} digits`;
+    // REQUIRED: Service
+    if (!values.service)
+      errs.service = "Please select a service";
 
-    if (!values.company.trim() || values.company.length < 2)
-      errs.company = "Company name must be at least 2 characters";
+    // OPTIONAL: Phone — only validate if filled in
+    if (values.mobile && values.mobile.length > 0 && values.mobile.length < 6)
+      errs.mobile = "Phone number seems too short";
 
-    if (
-      !values.city.trim() ||
-      values.city.length < 2 ||
-      !/^[a-zA-Z\s]+$/.test(values.city)
-    )
-      errs.city = "Enter a valid city name";
+    // Company and City: no longer required
 
     setErrors(errs);
     return Object.keys(errs).length === 0;
@@ -124,58 +124,64 @@ export default function ContactForm() {
     validate(updated);
   };
 
+  const showToast = () => {
+    const toast = document.getElementById("sf-toast");
+    toast?.classList.remove("opacity-0");
+    setTimeout(() => toast?.classList.add("opacity-0"), 4000);
+  };
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    if (!validate()) return;
+
+    setSubmitError(null);
+    setSubmitting(true);
+
+    // Only prepend country code if phone was actually filled in
+    const mobile = form.mobile.trim()
+      ? `${selectedCountry.phoneCode}${form.mobile.trim()}`
+      : "";
+
+    try {
+      const res = await fetch("/.netlify/functions/submit-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ ...form, mobile }),
+      });
+      const result = await res.json();
+
+      if (!res.ok || !result.success) {
+        throw new Error(result.error || "Submission failed");
+      }
+
+      trackEvent("contact_form_submit", { service: form.service });
+
+      setForm({
+        last_name: "",
+        email: "",
+        mobile: "",
+        company: "",
+        city: "",
+        description: "",
+        service: ""
+      });
+      showToast();
+    } catch (err) {
+      setSubmitError(
+        "Something went wrong sending your request. Please try again, or email us directly at contactus@l2global.in."
+      );
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
   return (
     <>
-      <iframe
-        ref={iframeRef}
-        name="sf_hidden_iframe"
-        className="hidden"
-        onLoad={() => {
-          if (submitted) {
-            setSubmitted(false);
-            setForm({
-              last_name: "",
-              email: "",
-              mobile: "",
-              company: "",
-              city: "",
-              description: "",
-              service: ""
-            });
-
-            setTimeout(() => {
-              const toast = document.getElementById("sf-toast");
-              toast?.classList.remove("opacity-0");
-              setTimeout(() => toast?.classList.add("opacity-0"), 4000);
-            }, 300);
-          }
-        }}
-      />
-
       <div className="rounded-3xl bg-[#FCFCFC] p-6 sm:p-8 ring-1 ring-[#F1EDFF] relative">
         <form
-          target="sf_hidden_iframe"
-          action="https://webto.salesforce.com/servlet/servlet.WebToLead?encoding=UTF-8&orgId=00D4P0000010dcs"
-          method="POST"
           className="space-y-6"
-          onSubmit={(e) => {
-            if (!validate()) {
-              e.preventDefault();
-              return;
-            }
-
-            setForm((prev) => ({
-              ...prev,
-              mobile: `${selectedCountry.phoneCode}${prev.mobile}`,
-            }));
-
-            setSubmitted(true);
-          }}
+          onSubmit={handleSubmit}
         >
-          <input type='hidden' name='lead_source' value='Website' />
-          <input type="hidden" name="oid" value="00D4P0000010dcs" />
-          <input type="hidden" name="retURL" value="" />
-
           {/* Name */}
           <div>
             <label className="block text-sm font-semibold">Name</label>
@@ -212,7 +218,7 @@ export default function ContactForm() {
                   onClick={() => setOpen(!open)}
                   className="w-full rounded-lg ring-1 ring-[#F1EDFF] bg-white px-3 py-3 flex gap-2"
                 >
-                  <Image src={selectedCountry.flag} alt="" width={20} height={14} />
+                  <Image src={selectedCountry.flag} alt={`${selectedCountry.name} flag`} width={20} height={14} />
                   +{selectedCountry.phoneCode}
                 </button>
 
@@ -259,12 +265,12 @@ export default function ContactForm() {
             />
           </div>
 
-          {/* City */}
+          {/* Country / Region */}
           <div>
-            <label className="block text-sm font-semibold">City</label>
+            <label className="block text-sm font-semibold">Country / Region</label>
             <input
               name="city"
-              placeholder="Enter city name"
+              placeholder="e.g. UK, USA, UAE, India"
               value={form.city}
               onChange={handleChange}
               className="mt-2 w-full rounded-lg ring-1 ring-[#F1EDFF] bg-white px-4 py-3"
@@ -277,16 +283,24 @@ export default function ContactForm() {
               onChange={handleChange}
               className='mt-2 w-full rounded-lg ring-1 ring-[#F1EDFF] bg-white px-4 py-3'>
               <option value=''>Select a service...</option>
+              <option value='agentforce'>Salesforce Agentforce AI</option>
+              <option value='sap-ai'>SAP Joule AI Implementation</option>
+              <option value='sap-s4hana'>SAP S/4HANA / RISE with SAP</option>
               <option value='salesforce'>Salesforce / CRM Consulting</option>
               <option value='sap'>SAP Integration & Implementation</option>
               <option value='mulesoft'>MuleSoft Integration</option>
               <option value='api'>API Integration Services</option>
               <option value='aws'>AWS Cloud Services</option>
               <option value='oracle'>Oracle Managed Services</option>
-              <option value='web'>Web Development</option>
+              <option value='data-science'>Data Science & Machine Learning</option>
+              <option value='manufacturing-cloud'>Agentforce Manufacturing Cloud</option>
+              <option value='financial-services'>Financial Services Cloud</option>
+              <option value='cpq'>CPQ & Revenue Cloud</option>
+              <option value='web'>Website Design & Development</option>
               <option value='custom'>Custom IT Solutions</option>
               <option value='other'>Other / Not Sure</option>
             </select>
+            {errors.service && <p className="text-xs text-red-500">{errors.service}</p>}
           </div>
 
 
@@ -303,12 +317,17 @@ export default function ContactForm() {
             />
           </div>
 
+          {submitError && (
+            <p className="text-sm text-red-500">{submitError}</p>
+          )}
+
           <button
             type="submit"
-            className="rounded-full cursor-pointer px-5 py-3 text-white font-semibold shadow-md transition-all hover:scale-[1.02]"
+            disabled={submitting}
+            className="rounded-full cursor-pointer px-5 py-3 text-white font-semibold shadow-md transition-all hover:scale-[1.02] disabled:opacity-60 disabled:cursor-not-allowed"
             style={{ background: "linear-gradient(to bottom, #4684FF, #074FDA)" }}
           >
-            Request Free Consultation
+            {submitting ? "Sending..." : "Request Free Consultation"}
           </button>
         </form>
 
